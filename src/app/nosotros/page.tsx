@@ -68,42 +68,36 @@ const MarkdownContent = ({ content }: { content: string }) => {
     });
   };
 
-  return (
-    <>
-      {content.split('\n').map((line, index) => {
-        const trimmedLine = line.trim();
-        if (trimmedLine.startsWith('## ')) {
-          return <h2 key={index} className="text-2xl md:text-3xl font-headline font-bold mt-8 mb-4 text-foreground/90">{parseLine(trimmedLine.substring(3))}</h2>;
-        }
-        if (trimmedLine.startsWith('### ')) {
-          return <h3 key={index} className="text-xl md:text-2xl font-headline font-semibold mt-6 mb-3 text-foreground/80">{parseLine(trimmedLine.substring(4))}</h3>;
-        }
-        if (trimmedLine.startsWith('- ')) {
-          // Find the start of the list to wrap in <ul>
-          const contentAfterDash = trimmedLine.substring(2);
-          const isStartOfList = index === 0 || !content.split('\n')[index - 1].trim().startsWith('- ');
-          const isEndOfList = (index === content.split('\n').length - 1) || !content.split('\n')[index + 1].trim().startsWith('- ');
-          
-          const listItem = <li key={index} className="ml-5 mb-2 list-disc">{parseLine(contentAfterDash)}</li>;
+  const lines = content.split('\n');
+  const elements = [];
+  let listItems = [];
 
-          if (isStartOfList && isEndOfList) {
-            return <ul key={`ul-${index}`}>{listItem}</ul>;
-          }
-          if (isStartOfList) {
-            return <ul key={`ul-${index}`} className="mb-4">{listItem}
-          }
-          if(isEndOfList) {
-            return <>{listItem}</ul>
-          }
-          return listItem;
-        }
-        if(trimmedLine === '') {
-            return null; // Don't render empty lines as <br> or <p>
-        }
-        return <p key={index} className="mb-4 leading-relaxed">{parseLine(trimmedLine)}</p>;
-      })}
-    </>
-  );
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const trimmedLine = line.trim();
+
+    if (trimmedLine.startsWith('- ')) {
+      listItems.push(<li key={i} className="ml-5 mb-2 list-disc">{parseLine(trimmedLine.substring(2))}</li>);
+    } else {
+      if (listItems.length > 0) {
+        elements.push(<ul key={`ul-${i - 1}`} className="mb-4">{listItems}</ul>);
+        listItems = [];
+      }
+      if (trimmedLine.startsWith('## ')) {
+        elements.push(<h2 key={i} className="text-2xl md:text-3xl font-headline font-bold mt-8 mb-4 text-foreground/90">{parseLine(trimmedLine.substring(3))}</h2>);
+      } else if (trimmedLine.startsWith('### ')) {
+        elements.push(<h3 key={i} className="text-xl md:text-2xl font-headline font-semibold mt-6 mb-3 text-foreground/80">{parseLine(trimmedLine.substring(4))}</h3>);
+      } else if (trimmedLine !== '') {
+        elements.push(<p key={i} className="mb-4 leading-relaxed">{parseLine(trimmedLine)}</p>);
+      }
+    }
+  }
+
+  if (listItems.length > 0) {
+    elements.push(<ul key={`ul-${lines.length}`} className="mb-4">{listItems}</ul>);
+  }
+
+  return <>{elements}</>;
 };
 
 
