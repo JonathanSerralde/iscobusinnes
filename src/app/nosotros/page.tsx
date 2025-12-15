@@ -61,14 +61,14 @@ export default async function NosotrosPage() {
   const renderContent = () => {
     return optimizedContent.split('\n').filter(line => line.trim() !== '').map((line, index) => {
       const trimmedLine = line.trim();
-      if (trimmedLine.length < 80 && !trimmedLine.endsWith('.') && !trimmedLine.endsWith(':') && isNaN(parseInt(trimmedLine.charAt(0)))) {
-          const cleanLine = trimmedLine.replace(/[*#-]/g, '').trim();
-          if (cleanLine.length > 0) {
-            return <h2 key={index} className="text-2xl md:text-3xl font-headline mt-8 mb-4 text-primary">{cleanLine}</h2>;
-          }
+      if (trimmedLine.startsWith('## ')) {
+        return <h2 key={index} className="text-2xl md:text-3xl font-headline mt-8 mb-4 text-primary">{trimmedLine.substring(3)}</h2>;
       }
-      if (trimmedLine.startsWith('-') || trimmedLine.startsWith('*')) {
-        return <li key={index} className="ml-5 list-disc mb-2">{trimmedLine.substring(1).trim()}</li>;
+      if (trimmedLine.startsWith('### ')) {
+        return <h3 key={index} className="text-xl md:text-2xl font-headline mt-6 mb-3 text-primary/90">{trimmedLine.substring(4)}</h3>;
+      }
+      if (trimmedLine.startsWith('- ')) {
+        return <li key={index} className="ml-5 list-disc mb-2">{trimmedLine.substring(2)}</li>;
       }
       return <p key={index} className="mb-4 leading-relaxed">{trimmedLine}</p>;
     });
@@ -94,7 +94,7 @@ export default async function NosotrosPage() {
             </div>
           )}
           <CardContent className="p-6 md:p-10">
-            <div className="text-base md:text-lg text-foreground/90">
+            <div className="text-base md:text-lg text-foreground/90 prose prose-neutral dark:prose-invert max-w-none">
               {renderContent()}
             </div>
           </CardContent>

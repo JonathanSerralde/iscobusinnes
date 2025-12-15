@@ -29,13 +29,13 @@ export type OptimizeContentForSEOInput = z.infer<
 const OptimizeContentForSEOOutputSchema = z.object({
   optimizedContent: z
     .string()
-    .describe('The optimized content for the website, incorporating SEO, SEM, and AEO principles.'),
+    .describe('The optimized content for the website, incorporating SEO, SEM, and AEO principles. Use Markdown for structure with headings (e.g., ## Title) and lists (e.g., - item).'),
   suggestedKeywords: z
     .string()
-    .describe('Suggested keywords to improve search engine ranking.'),
+    .describe('A comma-separated string of suggested keywords to improve search engine ranking.'),
   metaDescription: z
     .string()
-    .describe('A suggested meta description for the website.'),
+    .describe('A suggested meta description for the website (maximum 160 characters).'),
 });
 export type OptimizeContentForSEOOutput = z.infer<
   typeof OptimizeContentForSEOOutputSchema
@@ -51,19 +51,25 @@ const optimizeContentForSEOPrompt = ai.definePrompt({
   name: 'optimizeContentForSEOPrompt',
   input: {schema: OptimizeContentForSEOInputSchema},
   output: {schema: OptimizeContentForSEOOutputSchema},
-  prompt: `You are an expert in SEO, SEM, and AEO.
+  prompt: `You are an expert in SEO (Search Engine Optimization), SEM (Search Engine Marketing), and AEO (Answer Engine Optimization).
 
-  Analyze the following website content and provide suggestions for optimizing it for search engines, marketing, and app store optimization.
+  Your task is to analyze the provided website content and transform it into a well-structured, engaging, and optimized piece.
 
+  Analyze the following website content:
   Content: {{{websiteContent}}}
-
-  Focus on improving search engine rankings and attracting more organic traffic.
 
   Consider the following keywords if provided: {{{keywords}}}
 
-  Provide optimized content, suggested keywords, and a meta description.
+  Rewrite the content with the following objectives:
+  1.  **Structure and Readability**: Organize the content with clear headings and subheadings using Markdown (e.g., '## Mi Título', '### Mi Subtítulo'). Use lists with hyphens for bullet points.
+  2.  **SEO & SEM Integration**: Naturally integrate the provided keywords and other relevant terms throughout the content to improve search engine rankings.
+  3.  **AEO Principles**: Structure the content to directly answer potential user questions. Use clear and concise language.
+  4.  **Tone and Style**: Maintain the original meaning and professional tone of the content.
 
-  Make sure the optimized content retains the original meaning and intent.
+  Your final output must include:
+  -   **optimizedContent**: The rewritten content in Markdown format.
+  -   **suggestedKeywords**: A comma-separated list of new and relevant keywords.
+  -   **metaDescription**: A compelling meta description of 150-160 characters.
   `,
 });
 
