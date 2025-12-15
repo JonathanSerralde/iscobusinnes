@@ -49,7 +49,7 @@ export default function ContactoPage() {
           </div>
           <div className="space-y-8">
             <div className="bg-card p-8 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-headline mb-6">Información de Contacto</h3>
+                <h3 className="text-2xl font-headline mb-6 text-primary">Información de Contacto</h3>
                 <ul className="space-y-6">
                     {contactDetails.map(detail => (
                         <li key={detail.label} className="flex items-start gap-4">

@@ -98,7 +98,7 @@ const MarkdownContent = ({ content }: { content: string }) => {
     } else {
       flushList();
       if (trimmedLine.startsWith('## ')) {
-        elements.push(<h2 key={index} className="text-3xl font-headline font-bold mt-8 mb-4 text-foreground">{parseLine(trimmedLine.substring(3))}</h2>);
+        elements.push(<h2 key={index} className="text-3xl font-headline font-bold mt-8 mb-4 text-primary">{parseLine(trimmedLine.substring(3))}</h2>);
       } else if (trimmedLine.startsWith('### ')) {
         elements.push(<h3 key={index} className="text-2xl font-headline font-semibold mt-6 mb-3 text-foreground/90">{parseLine(trimmedLine.substring(4))}</h3>);
       } else if (trimmedLine) {
@@ -134,7 +134,7 @@ const DirectorMessage = () => {
         </div>
         <div className="md:col-span-2">
           <h2 className="text-3xl font-headline font-bold mb-4 text-primary">
-            Mensaje del <span className="text-destructive">Director general</span>
+            Mensaje del Director General
           </h2>
           <div className="space-y-4 text-foreground/90 text-base">
             <p>Como Director general de ICCI, es para mí un honor darles la más cordial bienvenida a esta comunidad académica y formativa que nace con una convicción muy clara:</p>
@@ -164,7 +164,7 @@ export default async function NosotrosPage() {
   return (
     <div className="bg-background py-12 md:py-16">
       <div className="container mx-auto px-4">
-        <Card className="max-w-5xl mx-auto overflow-hidden shadow-lg">
+        <Card className="max-w-5xl mx-auto overflow-hidden shadow-lg border-none">
           {aboutUsImage && (
             <div className="relative w-full h-64 md:h-96">
               <Image 
@@ -174,13 +174,13 @@ export default async function NosotrosPage() {
                 fill 
                 className="object-cover"
               />
-               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                <div className="absolute bottom-0 left-0 p-6 md:p-8">
                   <h1 className="text-4xl md:text-5xl font-headline text-white drop-shadow-lg">Sobre Nosotros</h1>
                </div>
             </div>
           )}
-          <CardContent className="p-6 md:p-10">
+          <CardContent className="p-6 md:p-10 bg-card">
             <div className="text-base md:text-lg text-foreground/90 prose prose-neutral dark:prose-invert max-w-none">
               <MarkdownContent content={optimizedContent} />
             </div>

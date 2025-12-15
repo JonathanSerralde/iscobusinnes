@@ -148,7 +148,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
             priority
           />
         )}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="relative h-full flex flex-col items-center justify-center text-center p-4">
           <div className="bg-primary/10 p-4 rounded-full mb-4">
             {course.icon}

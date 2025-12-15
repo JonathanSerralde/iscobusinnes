@@ -44,7 +44,7 @@ export default function ServiciosPage() {
                   {service.icon}
                 </div>
                 <div className="text-center sm:text-left">
-                  <CardTitle className="font-headline text-2xl">{service.title}</CardTitle>
+                  <CardTitle className="font-headline text-2xl text-primary">{service.title}</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>

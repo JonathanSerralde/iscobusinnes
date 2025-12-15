@@ -110,7 +110,7 @@ export default function Home() {
                     <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4 group-hover:scale-110 transition-transform">
                       {card.icon}
                     </div>
-                    <CardTitle className="font-headline text-2xl">{card.title}</CardTitle>
+                    <CardTitle className="font-headline text-2xl text-primary">{card.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
                     <p className="text-muted-foreground">{card.description}</p>

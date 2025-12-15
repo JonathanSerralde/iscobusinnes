@@ -75,7 +75,7 @@ export default function OfertaFormativaPage() {
                            <div className="bg-primary/10 p-3 rounded-full mt-1">
                             {course.icon}
                            </div>
-                           <CardTitle className="font-headline text-2xl leading-snug">{course.title}</CardTitle>
+                           <CardTitle className="font-headline text-2xl leading-snug text-primary">{course.title}</CardTitle>
                         </div>
                         <CardDescription className="text-base pl-[64px]">{course.description}</CardDescription>
                     </div>
