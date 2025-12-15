@@ -32,31 +32,31 @@ const ofertaFormativaCards = [
     title: 'Programas de Educación',
     imageId: 'oferta-educacion',
     href: '/oferta-formativa',
-    className: 'md:col-span-2'
+    className: 'lg:col-span-2'
   },
   {
     title: 'Educación Continua y Extensión Universitaria',
     imageId: 'oferta-continua',
     href: '/oferta-formativa',
-    className: 'md:col-span-2'
+    className: 'lg:col-span-2'
   },
     {
     title: 'Formación de Capital Humano',
     imageId: 'oferta-capital-humano',
     href: '/oferta-formativa',
-    className: 'md:col-span-2'
+    className: 'lg:col-span-2'
   },
     {
     title: 'Programas de Inclusión y Educación Especial',
     imageId: 'oferta-inclusion',
     href: '/oferta-formativa',
-    className: 'md:row-span-2'
+    className: 'lg:row-span-2'
   },
   {
     title: 'Programas de Protección Civil y Gestión Integral de Riesgo de Desastre',
     imageId: 'oferta-proteccion-civil',
     href: '/oferta-formativa',
-    className: 'md:col-span-3 md:row-span-2'
+    className: 'lg:col-span-3 lg:row-span-2'
   },
 ];
 
@@ -77,9 +77,9 @@ export default function Home() {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="relative h-full flex flex-col items-center justify-center text-center p-4">
-          <h1 className="text-4xl md:text-6xl font-headline font-bold leading-tight drop-shadow-md">
+          <h1 className="text-4xl md:text-6xl font-headline font-bold leading-tight drop-shadow-lg">
             Ibérica
           </h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl drop-shadow-sm">
@@ -133,7 +133,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[250px]">
               {ofertaFormativaCards.map(card => {
                 const image = PlaceHolderImages.find(img => img.id === card.imageId);
                 return (
@@ -147,7 +147,7 @@ export default function Home() {
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                     <div className="relative flex flex-col h-full justify-end p-6 text-white">
                       <h3 className="text-xl lg:text-2xl font-headline font-bold leading-tight drop-shadow-md">
                         {card.title}
@@ -156,8 +156,6 @@ export default function Home() {
                   </Link>
                 )
               })}
-              <div className="md:col-span-1 rounded-xl bg-red-500 min-h-[200px] hidden md:block"></div>
-              <div className="md:col-span-1 rounded-xl bg-red-400 min-h-[200px] hidden md:block"></div>
           </div>
         </div>
       </section>
