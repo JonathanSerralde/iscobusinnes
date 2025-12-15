@@ -59,6 +59,36 @@
       "description": "A clean and modern office reception desk",
       "imageUrl": "https://images.unsplash.com/photo-1505410603994-c3ac6269711f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxvZmZpY2UlMjByZWNlcHRpb258ZW58MHx8fHwxNzY1ODM0MTQ5fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "office reception"
+    },
+    {
+      "id": "oferta-educacion",
+      "description": "University students walking on campus",
+      "imageUrl": "https://images.unsplash.com/photo-1693011142814-aa33d7d1535c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdHVkZW50cyUyMGNhbXB1c3xlbnwwfHx8fDE3NjU3NjkyNTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "students campus"
+    },
+    {
+      "id": "oferta-continua",
+      "description": "Abstract digital learning concept",
+      "imageUrl": "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkaWdpdGFsJTIwbGVhcm5pbmd8ZW58MHx8fHwxNzY1ODQwNzA5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "digital learning"
+    },
+    {
+      "id": "oferta-proteccion-civil",
+      "description": "People in a computer lab learning",
+      "imageUrl": "https://images.unsplash.com/photo-1719159381981-1327b22aff9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb21wdXRlciUyMGxhYnxlbnwwfHx8fDE3NjU4NDA3MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "computer lab"
+    },
+    {
+      "id": "oferta-inclusion",
+      "description": "Diverse group of people in a meeting",
+      "imageUrl": "https://images.unsplash.com/photo-1622675363311-3e1904dc1885?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwbWVldGluZ3xlbnwwfHx8fDE3NjU3MzM0Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "diverse meeting"
+    },
+    {
+      "id": "oferta-capital-humano",
+      "description": "Business people sitting in a row waiting",
+      "imageUrl": "https://images.unsplash.com/photo-1506787497326-c2736dde1bef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMHBlb3BsZXxlbnwwfHx8fDE3NjU4MzU3NDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business people"
     }
   ]
 }

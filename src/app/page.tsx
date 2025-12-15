@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ArrowRight, BookOpen, Briefcase, GraduationCap } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const featureCards = [
   {
@@ -25,6 +26,40 @@ const featureCards = [
     icon: <Briefcase className="w-8 h-8 text-primary" />,
   },
 ];
+
+const ofertaFormativaCards = [
+  {
+    title: 'Programas de Educación',
+    imageId: 'oferta-educacion',
+    href: '/oferta-formativa',
+    className: 'md:col-span-2'
+  },
+  {
+    title: 'Educación Continua y Extensión Universitaria',
+    imageId: 'oferta-continua',
+    href: '/oferta-formativa',
+    className: 'md:col-span-2'
+  },
+    {
+    title: 'Formación de Capital Humano',
+    imageId: 'oferta-capital-humano',
+    href: '/oferta-formativa',
+    className: 'md:col-span-2'
+  },
+    {
+    title: 'Programas de Inclusión y Educación Especial',
+    imageId: 'oferta-inclusion',
+    href: '/oferta-formativa',
+    className: 'md:row-span-2'
+  },
+  {
+    title: 'Programas de Protección Civil y Gestión Integral de Riesgo de Desastre',
+    imageId: 'oferta-proteccion-civil',
+    href: '/oferta-formativa',
+    className: 'md:col-span-3 md:row-span-2'
+  },
+];
+
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero');
@@ -86,6 +121,47 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      <section className="py-16 md:py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-headline">
+              Nuestra <span className="text-primary">Oferta Formativa</span>
+            </h2>
+            <p className="mt-4 text-lg text-foreground/80">
+              Descubre un universo de posibilidades para tu crecimiento profesional.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {ofertaFormativaCards.map(card => {
+                const image = PlaceHolderImages.find(img => img.id === card.imageId);
+                return (
+                  <Link key={card.title} href={card.href} className={cn("group relative block overflow-hidden rounded-xl", card.className)}>
+                    {image && (
+                      <Image
+                        src={image.imageUrl}
+                        alt={card.title}
+                        data-ai-hint={image.imageHint}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+                    <div className="relative flex flex-col h-full justify-end p-6 text-white">
+                      <h3 className="text-xl lg:text-2xl font-headline font-bold leading-tight drop-shadow-md">
+                        {card.title}
+                      </h3>
+                    </div>
+                  </Link>
+                )
+              })}
+              <div className="md:col-span-1 rounded-xl bg-red-500 min-h-[200px] hidden md:block"></div>
+              <div className="md:col-span-1 rounded-xl bg-red-400 min-h-[200px] hidden md:block"></div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
