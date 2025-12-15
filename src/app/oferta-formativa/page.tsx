@@ -14,24 +14,28 @@ export const metadata: Metadata = {
 const courses = [
     {
       title: 'Diplomado en Liderazgo Educativo',
+      slug: 'liderazgo-educativo',
       description: 'Desarrolla las competencias para dirigir e innovar en instituciones educativas del siglo XXI.',
       imageId: 'course-1',
       icon: <GraduationCap className="h-7 w-7 text-primary" />,
     },
     {
       title: 'Certificación en Competencias Digitales',
+      slug: 'competencias-digitales',
       description: 'Valida tus habilidades en el uso de herramientas tecnológicas para el entorno profesional y académico.',
       imageId: 'course-4',
       icon: <Cpu className="h-7 w-7 text-primary" />,
     },
     {
       title: 'Curso de Neuroeducación Aplicada',
+      slug: 'neuroeducacion-aplicada',
       description: 'Aprende a aplicar los principios de la neurociencia para potenciar el aprendizaje en el aula.',
       imageId: 'course-3',
       icon: <BookOpen className="h-7 w-7 text-primary" />,
     },
     {
       title: 'Diplomado en Gestión de Proyectos',
+      slug: 'gestion-de-proyectos',
       description: 'Adquiere las herramientas y metodologías para planificar, ejecutar y cerrar proyectos exitosamente.',
       imageId: 'course-2',
       icon: <Briefcase className="h-7 w-7 text-primary" />,
@@ -77,7 +81,7 @@ export default function OfertaFormativaPage() {
                     </div>
                     <div className="mt-6 flex justify-end">
                         <Button asChild className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground">
-                           <Link href="#">Más Información</Link>
+                           <Link href={`/oferta-formativa/${course.slug}`}>Más Información</Link>
                         </Button>
                     </div>
                 </div>
