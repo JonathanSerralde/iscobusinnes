@@ -32,31 +32,31 @@ const ofertaFormativaCards = [
     title: 'Programas de Educación',
     imageId: 'oferta-educacion',
     href: '/oferta-formativa',
-    className: 'lg:col-span-2'
+    className: 'md:col-span-2'
   },
   {
     title: 'Educación Continua y Extensión Universitaria',
     imageId: 'oferta-continua',
     href: '/oferta-formativa',
-    className: 'lg:col-span-2'
+    className: 'md:col-span-2'
   },
-    {
-    title: 'Formación de Capital Humano',
-    imageId: 'oferta-capital-humano',
-    href: '/oferta-formativa',
-    className: 'lg:col-span-2'
-  },
-    {
+  {
     title: 'Programas de Inclusión y Educación Especial',
     imageId: 'oferta-inclusion',
     href: '/oferta-formativa',
-    className: 'lg:row-span-2'
+    className: 'md:col-span-2'
+  },
+  {
+    title: 'Formación de Capital Humano',
+    imageId: 'oferta-capital-humano',
+    href: '/oferta-formativa',
+    className: 'md:col-span-2'
   },
   {
     title: 'Programas de Protección Civil y Gestión Integral de Riesgo de Desastre',
     imageId: 'oferta-proteccion-civil',
     href: '/oferta-formativa',
-    className: 'lg:col-span-3 lg:row-span-2'
+    className: 'md:col-span-4'
   },
 ];
 
@@ -133,7 +133,7 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[250px]">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px]">
               {ofertaFormativaCards.map(card => {
                 const image = PlaceHolderImages.find(img => img.id === card.imageId);
                 return (
