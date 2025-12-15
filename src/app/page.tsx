@@ -45,7 +45,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative h-full flex flex-col items-center justify-center text-center p-4">
           <h1 className="text-4xl md:text-6xl font-headline font-bold leading-tight drop-shadow-md">
-            Instituto de Capacitación y <br/> Certificación Ibérica
+            Ibérica
           </h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl drop-shadow-sm">
             Talento con evidencia, competencias con impacto.
@@ -61,7 +61,7 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-headline text-primary">Bienvenidos a ICCI Ibérica</h2>
+            <h2 className="text-3xl md:text-4xl font-headline text-primary">Bienvenidos a Ibérica</h2>
             <p className="mt-4 text-lg text-foreground/80">
               Somos una institución de capacitación mexicana con una convicción clara: unir el conocimiento, las habilidades y las destrezas con la virtud ética para transformar la realidad de nuestro país. Formamos profesionales íntegros, críticos y socialmente responsables.
             </p>
@@ -69,10 +69,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {featureCards.map((card) => (
-              <Link key={card.title} href={card.href} className="block">
-                <Card className="text-center h-full hover:shadow-xl transition-shadow duration-300 flex flex-col">
+              <Link key={card.title} href={card.href} className="block group">
+                <Card className="text-center h-full hover:shadow-xl transition-shadow duration-300 flex flex-col group-hover:bg-muted/50">
                   <CardHeader>
-                    <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4">
+                    <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4 group-hover:scale-110 transition-transform">
                       {card.icon}
                     </div>
                     <CardTitle className="font-headline text-2xl">{card.title}</CardTitle>

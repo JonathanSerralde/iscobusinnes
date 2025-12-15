@@ -30,21 +30,17 @@ export function Header() {
       isMobile ? "text-lg py-2" : "text-sm font-medium"
     );
 
-    const link = (
-      <Link href={href} className={linkClass}>
-        {label}
-      </Link>
-    );
+    const linkContent = <Link href={href} className={linkClass}>{label}</Link>;
 
     if (isMobile) {
       return (
         <SheetClose asChild>
-          {link}
+          {linkContent}
         </SheetClose>
       )
     }
 
-    return link;
+    return linkContent;
   };
 
   return (
@@ -52,7 +48,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <GraduationCap className="h-7 w-7 text-primary" />
-          <span className="font-headline text-xl font-bold text-foreground">ICCI Ibérica</span>
+          <span className="font-headline text-xl font-bold text-foreground">Ibérica</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -75,10 +71,10 @@ export function Header() {
                   <SheetClose asChild>
                     <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
                       <GraduationCap className="h-6 w-6 text-primary" />
-                      <span className="font-headline text-lg font-bold">ICCI Ibérica</span>
+                      <span className="font-headline text-lg font-bold">Ibérica</span>
                     </Link>
                   </SheetClose>
-                  <SheetClose asChild>
+                   <SheetClose asChild>
                      <Button variant="ghost" size="icon">
                         <X className="h-6 w-6" />
                         <span className="sr-only">Cerrar menú</span>

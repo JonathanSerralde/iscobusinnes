@@ -14,10 +14,10 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
             <GraduationCap className="h-6 w-6 text-primary" />
-            <span className="font-headline text-lg font-bold text-foreground">ICCI Ibérica</span>
+            <span className="font-headline text-lg font-bold text-foreground">Ibérica</span>
           </div>
           <p className="text-sm text-center">
-            &copy; {new Date().getFullYear()} Instituto de Capacitación y Certificación Ibérica. Todos los derechos reservados.
+            &copy; {new Date().getFullYear()} Ibérica. Todos los derechos reservados.
           </p>
           <div className="flex gap-4">
             {socialLinks.map((link) => (

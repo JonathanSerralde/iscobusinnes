@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { Metadata } from 'next';
 
-const originalContent = `Bienvenidos al Instituto de Capacitación y Certificación Ibérica
+const originalContent = `Bienvenidos a Ibérica
 Somos una institución de capacitación mexicana que nace con una convicción clara: unir el conocimiento, las habilidades y las destrezas con la virtud ética para transformar la realidad de nuestro país. Bajo el lema “Talento con evidencia, competencias con impacto”, formamos profesionales íntegros, críticos y socialmente responsables, capaces de responder a los desafíos del siglo XXI.
  
 Somos una comunidad formativa y académica humanista, incluyente e innovadora que articula tres grandes funciones:
@@ -15,7 +15,7 @@ Somos una comunidad formativa y académica humanista, incluyente e innovadora qu
 Nuestro modelo educativo-formativo por competencias integra saberes disciplinares, habilidades cognitivas de alto nivel, competencias digitales y socioemocionales, sustentado en metodologías activas, neuroeducación y uso ético de la tecnología y la inteligencia artificial. Creemos en el aprendizaje a lo largo de la vida y en la universidad como espacio de diálogo, diversidad y construcción colectiva de soluciones.
  
 Nuestra razón de ser
-En ICCI trabajamos para que cada persona:
+En Ibérica trabajamos para que cada persona:
 - Desarrolle un perfil profesional sólido y pertinente a las demandas actuales del mundo laboral.
 - Construya un proyecto de vida ético, responsable y comprometido con su comunidad.
 - Viva experiencias formativas en modalidades presenciales, mixtas y en línea, con acompañamiento cercano de docentes, tutores e instructores.
@@ -41,7 +41,7 @@ async function getOptimizedContent(): Promise<OptimizeContentForSEOOutput> {
     return {
       optimizedContent: originalContent,
       suggestedKeywords: 'capacitación, certificación, profesional, educación, México, competencias',
-      metaDescription: 'Instituto de Capacitación y Certificación Ibérica: Formamos profesionales íntegros y competentes para transformar la realidad de nuestro país.'
+      metaDescription: 'Ibérica: Formamos profesionales íntegros y competentes para transformar la realidad de nuestro país.'
     };
   }
 }

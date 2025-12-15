@@ -6,8 +6,8 @@ import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
   title: {
-    default: 'ICCI Ibérica - Talento con evidencia, competencias con impacto',
-    template: '%s | ICCI Ibérica',
+    default: 'Ibérica - Talento con evidencia, competencias con impacto',
+    template: '%s | Ibérica',
   },
   description: 'Somos una institución de capacitación mexicana que une conocimiento, habilidades y destrezas con la virtud ética para transformar la realidad de nuestro país.',
   keywords: ['capacitación', 'certificación', 'educación', 'instituto', 'ibérica', 'méxico'],
