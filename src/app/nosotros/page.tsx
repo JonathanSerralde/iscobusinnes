@@ -55,11 +55,9 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function NosotrosPage() {
-  const { optimizedContent, suggestedKeywords } = await getOptimizedContent();
-  const aboutUsImage = PlaceHolderImages.find(img => img.id === 'about-us');
-
+const MarkdownContent = ({ content }: { content: string }) => {
   const parseLine = (line: string) => {
+    // Split by **bold** text, keeping the delimiters
     const parts = line.split(/(\*\*.*?\*\*)/g);
     return parts.map((part, i) => {
       if (part.startsWith('**') && part.endsWith('**')) {
@@ -69,21 +67,32 @@ export default async function NosotrosPage() {
     });
   };
 
-  const renderContent = () => {
-    return optimizedContent.split('\n').filter(line => line.trim() !== '').map((line, index) => {
-      const trimmedLine = line.trim();
-      if (trimmedLine.startsWith('## ')) {
-        return <h2 key={index} className="text-2xl md:text-3xl font-headline mt-8 mb-4 text-primary">{parseLine(trimmedLine.substring(3))}</h2>;
-      }
-      if (trimmedLine.startsWith('### ')) {
-        return <h3 key={index} className="text-xl md:text-2xl font-headline mt-6 mb-3 text-primary/90">{parseLine(trimmedLine.substring(4))}</h3>;
-      }
-      if (trimmedLine.startsWith('- ')) {
-        return <li key={index} className="ml-5 list-disc mb-2">{parseLine(trimmedLine.substring(2))}</li>;
-      }
-      return <p key={index} className="mb-4 leading-relaxed">{parseLine(trimmedLine)}</p>;
-    });
-  };
+  return (
+    <>
+      {content.split('\n').map((line, index) => {
+        const trimmedLine = line.trim();
+        if (trimmedLine.startsWith('## ')) {
+          return <h2 key={index} className="text-2xl md:text-3xl font-headline mt-8 mb-4 text-primary">{parseLine(trimmedLine.substring(3))}</h2>;
+        }
+        if (trimmedLine.startsWith('### ')) {
+          return <h3 key={index} className="text-xl md:text-2xl font-headline mt-6 mb-3 text-primary/90">{parseLine(trimmedLine.substring(4))}</h3>;
+        }
+        if (trimmedLine.startsWith('- ')) {
+          return <li key={index} className="ml-5 list-disc mb-2">{parseLine(trimmedLine.substring(2))}</li>;
+        }
+        if(trimmedLine === '') {
+            return <br key={index} />;
+        }
+        return <p key={index} className="mb-4 leading-relaxed">{parseLine(trimmedLine)}</p>;
+      })}
+    </>
+  );
+};
+
+
+export default async function NosotrosPage() {
+  const { optimizedContent, suggestedKeywords } = await getOptimizedContent();
+  const aboutUsImage = PlaceHolderImages.find(img => img.id === 'about-us');
 
   return (
     <div className="bg-background py-12 md:py-16">
@@ -106,7 +115,7 @@ export default async function NosotrosPage() {
           )}
           <CardContent className="p-6 md:p-10">
             <div className="text-base md:text-lg text-foreground/90 prose prose-neutral dark:prose-invert max-w-none">
-              {renderContent()}
+              <MarkdownContent content={optimizedContent} />
             </div>
           </CardContent>
           <CardFooter className="bg-muted/50 p-6 md:p-8 flex flex-col items-start gap-2 border-t">
