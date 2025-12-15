@@ -42,9 +42,17 @@ const getOptimizedContent = React.cache(async (): Promise<OptimizeContentForSEOO
     console.error("Error optimizing content:", error);
     // Return original content as a fallback
     return {
-      optimizedContent: originalContent.replace(/(\*\*|### |## )/g, ''),
-      suggestedKeywords: 'capacitación, certificación, profesional, educación, México, competencias',
-      metaDescription: 'Ibérica: Formamos profesionales íntegros y competentes para transformar la realidad de nuestro país.'
+      optimizedContent: `## Bienvenidos a Ibérica
+Somos una institución de capacitación mexicana que nace con una convicción clara: unir el conocimiento, las habilidades y las destrezas con la virtud ética para transformar la realidad de nuestro país. Bajo el lema **“Talento con evidencia, competencias con impacto”**, formamos profesionales íntegros, críticos y socialmente responsables, capaces de responder a los desafíos del siglo XXI.
+### Nuestra Misión
+Somos una comunidad formativa y académica humanista, incluyente e innovadora que articula tres grandes funciones:
+- Formación profesional de calidad.
+- Educación continua y actualización permanente.
+- Extensión y vinculación universitaria con los sectores social, público y productivo.
+### Nuestro Modelo Educativo
+Nuestro modelo educativo-formativo por competencias integra saberes disciplinares, habilidades cognitivas de alto nivel, competencias digitales y socioemocionales, sustentado en metodologías activas, **neuroeducación** y uso ético de la tecnología y la inteligencia artificial. Creemos en el aprendizaje a lo largo de la vida y en la universidad como espacio de diálogo, diversidad y construcción colectiva de soluciones.`,
+      suggestedKeywords: 'capacitación, certificación, profesional, educación, México, competencias, liderazgo, neuroeducación, modelo educativo',
+      metaDescription: 'En Ibérica, formamos profesionales con talento y competencias de impacto a través de un modelo educativo innovador y humanista. Conoce nuestra oferta de capacitación y certificación en México.'
     };
   }
 });
