@@ -69,17 +69,19 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {featureCards.map((card) => (
-              <Card key={card.title} className="text-center hover:shadow-xl transition-shadow duration-300">
-                <CardHeader>
-                  <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4">
-                    {card.icon}
-                  </div>
-                  <CardTitle className="font-headline text-2xl">{card.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{card.description}</p>
-                </CardContent>
-              </Card>
+              <Link key={card.title} href={card.href} className="block">
+                <Card className="text-center h-full hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                  <CardHeader>
+                    <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4">
+                      {card.icon}
+                    </div>
+                    <CardTitle className="font-headline text-2xl">{card.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <p className="text-muted-foreground">{card.description}</p>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
