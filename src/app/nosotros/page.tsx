@@ -6,7 +6,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { Metadata } from 'next';
 import React from 'react';
 
-const originalContent = `Bienvenidos a Ibérica
+const originalContent = `Bienvenidos al Instituto de Capacitación y Certificación Ibérica
 Somos una institución de capacitación mexicana que nace con una convicción clara: unir el conocimiento, las habilidades y las destrezas con la virtud ética para transformar la realidad de nuestro país. Bajo el lema “Talento con evidencia, competencias con impacto”, formamos profesionales íntegros, críticos y socialmente responsables, capaces de responder a los desafíos del siglo XXI.
  
 Somos una comunidad formativa y académica humanista, incluyente e innovadora que articula tres grandes funciones:
@@ -96,7 +96,7 @@ const MarkdownContent = ({ content }: { content: string }) => {
     } else {
       flushList();
       if (trimmedLine.startsWith('## ')) {
-        elements.push(<h2 key={index} className="text-2xl md:text-3xl font-headline font-bold mt-8 mb-4 text-foreground/90">{parseLine(trimmedLine.substring(3))}</h2>);
+        elements.push(<h2 key={index} className="text-2xl md:text-3xl font-headline font-bold mt-8 mb-4 text-foreground">{parseLine(trimmedLine.substring(3))}</h2>);
       } else if (trimmedLine.startsWith('### ')) {
         elements.push(<h3 key={index} className="text-xl md:text-2xl font-headline font-semibold mt-6 mb-3 text-foreground/80">{parseLine(trimmedLine.substring(4))}</h3>);
       } else if (trimmedLine) {
