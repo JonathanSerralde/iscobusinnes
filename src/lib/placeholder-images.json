@@ -1,3 +1,58 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "Modern university building with students walking",
+      "imageUrl": "https://images.unsplash.com/photo-1618255630366-f402c45736f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dW5pdmVyc2l0eSUyMGNhbXB1c3xlbnwwfHx8fDE3NjU3NTM3MjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "university campus"
+    },
+    {
+      "id": "about-us",
+      "description": "Diverse group of students collaborating in a bright, modern library",
+      "imageUrl": "https://images.unsplash.com/photo-1752920299211-28be8c9b0121?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdHVkZW50cyUyMGxpYnJhcnl8ZW58MHx8fHwxNzY1Nzg3Mzc1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "students library"
+    },
+    {
+      "id": "course-1",
+      "description": "Instructor teaching a small group of engaged students in a classroom",
+      "imageUrl": "https://images.unsplash.com/photo-1649920442906-3c8ef428fb6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjbGFzc3Jvb20lMjB0ZWFjaGluZ3xlbnwwfHx8fDE3NjU3NzMwNDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "classroom teaching"
+    },
+    {
+      "id": "course-2",
+      "description": "Professionals in a workshop, working together on a project",
+      "imageUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHdvcmtzaG9wfGVufDB8fHx8MTc2NTgzNzUxOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business workshop"
+    },
+    {
+      "id": "course-3",
+      "description": "Person focused on a laptop screen displaying complex data charts",
+      "imageUrl": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkYXRhJTIwYW5hbHlzaXN8ZW58MHx8fHwxNzY1ODM2NjA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data analysis"
+    },
+    {
+      "id": "course-4",
+      "description": "Close up of a person's hands typing on a modern laptop",
+      "imageUrl": "https://images.unsplash.com/photo-1617913075074-2d877051155e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGlnaXRhbCUyMHNraWxsc3xlbnwwfHx8fDE3NjU4Mzc1MTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "digital skills"
+    },
+    {
+      "id": "service-1",
+      "description": "A person receiving a certificate at a graduation ceremony",
+      "imageUrl": "https://images.unsplash.com/photo-1658235081562-a7f50e7e05b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2VydGlmaWNhdGUlMjBncmFkdWF0aW9ufGVufDB8fHx8MTc2NTgzNzUxOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "certificate graduation"
+    },
+    {
+      "id": "service-2",
+      "description": "Consultant advising a client in a professional office setting",
+      "imageUrl": "https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxidXNpbmVzcyUyMGNvbnN1bHRpbmd8ZW58MHx8fHwxNzY1ODM3NTE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business consulting"
+    },
+    {
+      "id": "contact",
+      "description": "A clean and modern office reception desk",
+      "imageUrl": "https://images.unsplash.com/photo-1505410603994-c3ac6269711f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxvZmZpY2UlMjByZWNlcHRpb258ZW58MHx8fHwxNzY1ODM0MTQ5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "office reception"
+    }
+  ]
 }
