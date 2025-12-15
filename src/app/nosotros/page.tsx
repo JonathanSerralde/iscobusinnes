@@ -1,3 +1,4 @@
+
 import { optimizeContentForSEO, type OptimizeContentForSEOOutput } from '@/ai/flows/optimize-content-for-seo';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
@@ -41,7 +42,7 @@ const getOptimizedContent = React.cache(async (): Promise<OptimizeContentForSEOO
     console.error("Error optimizing content:", error);
     // Return original content as a fallback
     return {
-      optimizedContent: originalContent,
+      optimizedContent: originalContent.replace(/(\*\*|### |## )/g, ''),
       suggestedKeywords: 'capacitación, certificación, profesional, educación, México, competencias',
       metaDescription: 'Ibérica: Formamos profesionales íntegros y competentes para transformar la realidad de nuestro país.'
     };
@@ -70,32 +71,33 @@ const MarkdownContent = ({ content }: { content: string }) => {
 
   const lines = content.split('\n');
   const elements = [];
-  let listItems = [];
+  let listItems: React.ReactNode[] = [];
 
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
+  const flushList = () => {
+    if (listItems.length > 0) {
+      elements.push(<ul key={`ul-${elements.length}`} className="mb-4 list-disc pl-5 space-y-2">{listItems}</ul>);
+      listItems = [];
+    }
+  };
+
+  lines.forEach((line, index) => {
     const trimmedLine = line.trim();
 
     if (trimmedLine.startsWith('- ')) {
-      listItems.push(<li key={i} className="ml-5 mb-2 list-disc">{parseLine(trimmedLine.substring(2))}</li>);
+      listItems.push(<li key={index}>{parseLine(trimmedLine.substring(2))}</li>);
     } else {
-      if (listItems.length > 0) {
-        elements.push(<ul key={`ul-${i - 1}`} className="mb-4">{listItems}</ul>);
-        listItems = [];
-      }
+      flushList();
       if (trimmedLine.startsWith('## ')) {
-        elements.push(<h2 key={i} className="text-2xl md:text-3xl font-headline font-bold mt-8 mb-4 text-foreground/90">{parseLine(trimmedLine.substring(3))}</h2>);
+        elements.push(<h2 key={index} className="text-2xl md:text-3xl font-headline font-bold mt-8 mb-4 text-foreground/90">{parseLine(trimmedLine.substring(3))}</h2>);
       } else if (trimmedLine.startsWith('### ')) {
-        elements.push(<h3 key={i} className="text-xl md:text-2xl font-headline font-semibold mt-6 mb-3 text-foreground/80">{parseLine(trimmedLine.substring(4))}</h3>);
-      } else if (trimmedLine !== '') {
-        elements.push(<p key={i} className="mb-4 leading-relaxed">{parseLine(trimmedLine)}</p>);
+        elements.push(<h3 key={index} className="text-xl md:text-2xl font-headline font-semibold mt-6 mb-3 text-foreground/80">{parseLine(trimmedLine.substring(4))}</h3>);
+      } else if (trimmedLine) {
+        elements.push(<p key={index} className="mb-4 leading-relaxed">{parseLine(trimmedLine)}</p>);
       }
     }
-  }
+  });
 
-  if (listItems.length > 0) {
-    elements.push(<ul key={`ul-${lines.length}`} className="mb-4">{listItems}</ul>);
-  }
+  flushList(); // Ensure any remaining list items are rendered
 
   return <>{elements}</>;
 };
@@ -138,3 +140,5 @@ export default async function NosotrosPage() {
     </div>
   );
 }
+
+    
