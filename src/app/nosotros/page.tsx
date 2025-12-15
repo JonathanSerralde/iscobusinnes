@@ -1,10 +1,12 @@
 
+
 import { optimizeContentForSEO, type OptimizeContentForSEOOutput } from '@/ai/flows/optimize-content-for-seo';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { Metadata } from 'next';
 import React from 'react';
+import { Separator } from '@/components/ui/separator';
 
 const originalContent = `Bienvenidos al Instituto de Capacitación y Certificación Ibérica
 Somos una institución de capacitación mexicana que nace con una convicción clara: unir el conocimiento, las habilidades y las destrezas con la virtud ética para transformar la realidad de nuestro país. Bajo el lema “Talento con evidencia, competencias con impacto”, formamos profesionales íntegros, críticos y socialmente responsables, capaces de responder a los desafíos del siglo XXI.
@@ -96,9 +98,9 @@ const MarkdownContent = ({ content }: { content: string }) => {
     } else {
       flushList();
       if (trimmedLine.startsWith('## ')) {
-        elements.push(<h2 key={index} className="text-2xl md:text-3xl font-headline font-bold mt-8 mb-4 text-foreground">{parseLine(trimmedLine.substring(3))}</h2>);
+        elements.push(<h2 key={index} className="text-3xl font-headline font-bold mt-8 mb-4 text-foreground">{parseLine(trimmedLine.substring(3))}</h2>);
       } else if (trimmedLine.startsWith('### ')) {
-        elements.push(<h3 key={index} className="text-xl md:text-2xl font-headline font-semibold mt-6 mb-3 text-foreground/90">{parseLine(trimmedLine.substring(4))}</h3>);
+        elements.push(<h3 key={index} className="text-2xl font-headline font-semibold mt-6 mb-3 text-foreground/90">{parseLine(trimmedLine.substring(4))}</h3>);
       } else if (trimmedLine) {
         elements.push(<p key={index} className="mb-4 leading-relaxed">{parseLine(trimmedLine)}</p>);
       }
@@ -110,6 +112,50 @@ const MarkdownContent = ({ content }: { content: string }) => {
   return <>{elements}</>;
 };
 
+const DirectorMessage = () => {
+  const directorImage = PlaceHolderImages.find(img => img.id === 'director');
+
+  return (
+    <div className="bg-muted/50 rounded-lg p-8 my-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+        <div className="flex flex-col items-center text-center md:col-span-1">
+          {directorImage && (
+            <Image
+              src={directorImage.imageUrl}
+              alt="Mtro. Alvaro Serralde Ramos"
+              data-ai-hint={directorImage.imageHint}
+              width={180}
+              height={180}
+              className="rounded-full object-cover mb-4 border-4 border-white shadow-lg"
+            />
+          )}
+          <h3 className="font-headline font-bold text-xl text-foreground">Mtro. Alvaro Serralde Ramos</h3>
+          <p className="text-muted-foreground">Director general</p>
+        </div>
+        <div className="md:col-span-2">
+          <h2 className="text-3xl font-headline font-bold mb-4 text-primary">
+            Mensaje del <span className="text-destructive">Director general</span>
+          </h2>
+          <div className="space-y-4 text-foreground/90 text-base">
+            <p>Como Director general de ICCI, es para mí un honor darles la más cordial bienvenida a esta comunidad académica y formativa que nace con una convicción muy clara:</p>
+            <p className="font-semibold text-lg text-center my-4 text-foreground italic px-4 py-2 border-l-4 border-primary bg-primary/5">Unir el conocimiento con la ética, la ciencia con la humanidad, la formación profesional con el compromiso social.</p>
+            <p>Vivimos en un México y en un mundo que enfrentan desafíos complejos: desigualdad, violencia, crisis ambiental, transformaciones tecnológicas aceleradas y cambios profundos en el mundo del trabajo. Ante este contexto, en ICCI asumimos que la educación y formación continua no puede limitarse a transmitir información; su misión es formar personas capaces de pensar críticamente, sentir con empatía y actuar con responsabilidad.</p>
+            <p>Bajo el lema "Talento con evidencia, competencias con impacto", trabajamos para que cada persona:</p>
+            <ul className="list-disc list-inside space-y-2">
+              <li>Desarrolle competencias profesionales sólidas y pertinentes al siglo XXI.</li>
+              <li>Fortalezca sus habilidades cognitivas, digitales y socioemocionales.</li>
+              <li>Construya un proyecto de vida ético y comprometido con su comunidad.</li>
+              <li>Encuentre en nuestra institución un espacio de diálogo, inclusión y respeto a la diversidad.</li>
+            </ul>
+            <p>En ICCI articulamos educación continua como un ecosistema de aprendizaje a lo largo de la vida. Nuestro modelo educativo-formativo se sustenta en el enfoque por competencias, la innovación tecnopedagógica y una profunda vocación de servicio a la sociedad.</p>
+            <p>Te invito a conocer nuestra oferta formativa, nuestros valores y proyectos. Si decides formarte con nosotros, no solo ingresarás a una institución; te integrarás a una comunidad que cree en tu talento, apuesta por tu desarrollo y confía en tu capacidad para transformar tu realidad y la de los demás.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 
 export default async function NosotrosPage() {
   const { optimizedContent, suggestedKeywords } = await getOptimizedContent();
@@ -118,7 +164,7 @@ export default async function NosotrosPage() {
   return (
     <div className="bg-background py-12 md:py-16">
       <div className="container mx-auto px-4">
-        <Card className="max-w-4xl mx-auto overflow-hidden shadow-lg">
+        <Card className="max-w-5xl mx-auto overflow-hidden shadow-lg">
           {aboutUsImage && (
             <div className="relative w-full h-64 md:h-96">
               <Image 
@@ -138,6 +184,9 @@ export default async function NosotrosPage() {
             <div className="text-base md:text-lg text-foreground/90 prose prose-neutral dark:prose-invert max-w-none">
               <MarkdownContent content={optimizedContent} />
             </div>
+
+            <DirectorMessage />
+
           </CardContent>
           <CardFooter className="bg-muted/50 p-6 md:p-8 flex flex-col items-start gap-2 border-t">
             <h3 className="text-xl font-headline text-primary">Palabras Clave Sugeridas (IA)</h3>
