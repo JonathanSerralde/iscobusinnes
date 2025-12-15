@@ -72,13 +72,14 @@ const MarkdownContent = ({ content }: { content: string }) => {
       {content.split('\n').map((line, index) => {
         const trimmedLine = line.trim();
         if (trimmedLine.startsWith('## ')) {
-          return <h2 key={index} className="text-2xl md:text-3xl font-headline mt-8 mb-4 text-primary">{parseLine(trimmedLine.substring(3))}</h2>;
+          return <h2 key={index} className="text-2xl md:text-3xl font-headline font-bold mt-8 mb-4 text-foreground">{parseLine(trimmedLine.substring(3))}</h2>;
         }
         if (trimmedLine.startsWith('### ')) {
-          return <h3 key={index} className="text-xl md:text-2xl font-headline mt-6 mb-3 text-primary/90">{parseLine(trimmedLine.substring(4))}</h3>;
+          return <h3 key={index} className="text-xl md:text-2xl font-headline font-semibold mt-6 mb-3 text-foreground/90">{parseLine(trimmedLine.substring(4))}</h3>;
         }
         if (trimmedLine.startsWith('- ')) {
-          return <li key={index} className="ml-5 list-disc mb-2">{parseLine(trimmedLine.substring(2))}</li>;
+          // Use a list container for list items
+          return <li key={index} className="ml-5 mb-2 list-disc">{parseLine(trimmedLine.substring(2))}</li>;
         }
         if(trimmedLine === '') {
             return <br key={index} />;
