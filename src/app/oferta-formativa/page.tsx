@@ -80,7 +80,7 @@ export default function OfertaFormativaPage() {
                         <CardDescription className="text-base pl-[64px]">{course.description}</CardDescription>
                     </div>
                     <div className="mt-6 flex justify-end">
-                        <Button asChild className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground">
+                        <Button asChild className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground">
                            <Link href={`/oferta-formativa/${course.slug}`}>Más Información</Link>
                         </Button>
                     </div>

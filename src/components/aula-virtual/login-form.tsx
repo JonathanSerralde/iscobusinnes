@@ -78,7 +78,7 @@ export function LoginForm() {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full bg-accent hover:bg-accent/90" disabled={isLoading}>
+            <Button type="submit" className="w-full" disabled={isLoading}>
               {isLoading ? "Ingresando..." : <>Iniciar Sesión <LogIn className="ml-2 h-4 w-4" /></>}
             </Button>
           </form>

@@ -94,7 +94,7 @@ export function RegisterForm() {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full bg-accent hover:bg-accent/90" disabled={isLoading}>
+            <Button type="submit" className="w-full" disabled={isLoading}>
               {isLoading ? "Creando cuenta..." : <>Registrarse <UserPlus className="ml-2 h-4 w-4" /></>}
             </Button>
           </form>

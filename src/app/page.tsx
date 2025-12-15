@@ -85,7 +85,7 @@ export default function Home() {
           <p className="mt-4 text-lg md:text-xl max-w-3xl drop-shadow-sm">
             Talento con evidencia, competencias con impacto.
           </p>
-          <Button asChild size="lg" className="mt-8 bg-accent hover:bg-accent/90 text-accent-foreground">
+          <Button asChild size="lg" className="mt-8 bg-primary hover:bg-primary/90 text-primary-foreground">
             <Link href="/oferta-formativa">
               Explorar Cursos <ArrowRight className="ml-2" />
             </Link>

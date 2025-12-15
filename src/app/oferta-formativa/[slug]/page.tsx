@@ -207,7 +207,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
           <div className="mt-12 text-center">
             <h3 className="text-2xl font-headline mb-4">¿Interesado en este curso?</h3>
             <p className="text-muted-foreground mb-6 max-w-xl mx-auto">Ponte en contacto con nosotros para obtener más información sobre inscripciones, precios y próximas fechas.</p>
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Link href="/contacto">Contactar Ahora</Link>
             </Button>
           </div>
