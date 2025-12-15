@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardDescription, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -49,12 +49,12 @@ export default function OfertaFormativaPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {courses.map((course) => {
             const image = PlaceHolderImages.find(img => img.id === course.imageId);
             return (
               <Card key={course.title} className="flex flex-col md:flex-row overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="relative w-full md:w-1/3 h-48 md:h-auto">
+                <div className="relative w-full md:w-5/12 h-56 md:h-auto">
                     {image && (
                         <Image
                             src={image.imageUrl}
@@ -65,16 +65,18 @@ export default function OfertaFormativaPage() {
                         />
                     )}
                 </div>
-                <div className="flex flex-col justify-between p-6 w-full md:w-2/3">
+                <div className="flex flex-col justify-between p-6 w-full md:w-7/12">
                     <div>
-                        <div className="flex items-center gap-4 mb-2">
-                           {course.icon}
-                           <CardTitle className="font-headline text-2xl">{course.title}</CardTitle>
+                        <div className="flex items-start gap-4 mb-3">
+                           <div className="bg-primary/10 p-3 rounded-full mt-1">
+                            {course.icon}
+                           </div>
+                           <CardTitle className="font-headline text-2xl leading-snug">{course.title}</CardTitle>
                         </div>
-                        <CardDescription className="text-base">{course.description}</CardDescription>
+                        <CardDescription className="text-base pl-[64px]">{course.description}</CardDescription>
                     </div>
-                    <div className="mt-6">
-                        <Button asChild className="w-full md:w-auto bg-primary hover:bg-primary/90">
+                    <div className="mt-6 flex justify-end">
+                        <Button asChild className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground">
                            <Link href="#">Más Información</Link>
                         </Button>
                     </div>
