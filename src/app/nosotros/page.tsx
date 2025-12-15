@@ -17,7 +17,7 @@ Somos una comunidad formativa y académica humanista, incluyente e innovadora qu
 Nuestro modelo educativo-formativo por competencias integra saberes disciplinares, habilidades cognitivas de alto nivel, competencias digitales y socioemocionales, sustentado en metodologías activas, neuroeducación y uso ético de la tecnología y la inteligencia artificial. Creemos en el aprendizaje a lo largo de la vida y en la universidad como espacio de diálogo, diversidad y construcción colectiva de soluciones.
  
 Nuestra razón de ser
-En Ibérica trabajamos para que cada persona:
+En ICCI trabajamos para que cada persona:
 - Desarrolle un perfil profesional sólido y pertinente a las demandas actuales del mundo laboral.
 - Construya un proyecto de vida ético, responsable y comprometido con su comunidad.
 - Viva experiencias formativas en modalidades presenciales, mixtas y en línea, con acompañamiento cercano de docentes, tutores e instructores.
@@ -98,7 +98,7 @@ const MarkdownContent = ({ content }: { content: string }) => {
       if (trimmedLine.startsWith('## ')) {
         elements.push(<h2 key={index} className="text-2xl md:text-3xl font-headline font-bold mt-8 mb-4 text-foreground">{parseLine(trimmedLine.substring(3))}</h2>);
       } else if (trimmedLine.startsWith('### ')) {
-        elements.push(<h3 key={index} className="text-xl md:text-2xl font-headline font-semibold mt-6 mb-3 text-foreground/80">{parseLine(trimmedLine.substring(4))}</h3>);
+        elements.push(<h3 key={index} className="text-xl md:text-2xl font-headline font-semibold mt-6 mb-3 text-foreground/90">{parseLine(trimmedLine.substring(4))}</h3>);
       } else if (trimmedLine) {
         elements.push(<p key={index} className="mb-4 leading-relaxed">{parseLine(trimmedLine)}</p>);
       }
@@ -148,5 +148,3 @@ export default async function NosotrosPage() {
     </div>
   );
 }
-
-    
