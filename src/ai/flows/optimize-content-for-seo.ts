@@ -64,14 +64,6 @@ const optimizeContentForSEOPrompt = ai.definePrompt({
   Provide optimized content, suggested keywords, and a meta description.
 
   Make sure the optimized content retains the original meaning and intent.
-  Follow this format for output:
-  ```json
-  {
-    "optimizedContent": "...",
-    "suggestedKeywords": "...",
-    "metaDescription": "..."
-  }
-  ```
   `,
 });
 
