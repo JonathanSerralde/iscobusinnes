@@ -8,22 +8,24 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { LogIn } from "lucide-react";
+import { UserPlus } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 
 const formSchema = z.object({
+  name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres." }),
   email: z.string().email({ message: "Por favor, introduce un correo electrónico válido." }),
   password: z.string().min(6, { message: "La contraseña debe tener al menos 6 caracteres." }),
 });
 
-export function LoginForm() {
+export function RegisterForm() {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      name: "",
       email: "",
       password: "",
     },
@@ -36,9 +38,10 @@ export function LoginForm() {
     // Simulate API call
     setTimeout(() => {
       toast({
-        title: "Inicio de Sesión (Simulación)",
-        description: `Bienvenido, ${values.email}. En una aplicación real, serías redirigido.`,
+        title: "Registro Exitoso (Simulación)",
+        description: `¡Bienvenido, ${values.name}! Tu cuenta ha sido creada.`,
       });
+      form.reset();
       setIsLoading(false);
     }, 1500);
   }
@@ -46,12 +49,25 @@ export function LoginForm() {
   return (
     <Card className="w-full max-w-md shadow-xl">
       <CardHeader className="text-center">
-        <CardTitle className="text-3xl font-headline text-primary">Aula Virtual</CardTitle>
-        <CardDescription>Ingresa a tu cuenta para continuar</CardDescription>
+        <CardTitle className="text-3xl font-headline text-primary">Crear una Cuenta</CardTitle>
+        <CardDescription>Regístrate para acceder al Aula Virtual</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Nombre Completo</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Tu nombre" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <FormField
               control={form.control}
               name="email"
@@ -79,20 +95,15 @@ export function LoginForm() {
               )}
             />
             <Button type="submit" className="w-full bg-accent hover:bg-accent/90" disabled={isLoading}>
-              {isLoading ? "Ingresando..." : <>Iniciar Sesión <LogIn className="ml-2 h-4 w-4" /></>}
+              {isLoading ? "Creando cuenta..." : <>Registrarse <UserPlus className="ml-2 h-4 w-4" /></>}
             </Button>
           </form>
         </Form>
-        <div className="mt-6 text-center text-sm space-y-2">
+        <div className="mt-6 text-center text-sm">
             <p>
-                <Link href="#" className="underline text-muted-foreground hover:text-primary">
-                    ¿Olvidaste tu contraseña?
-                </Link>
-            </p>
-            <p>
-                ¿No tienes una cuenta?{' '}
-                <Link href="/aula-virtual/registro" className="underline text-primary font-semibold hover:text-primary/80">
-                    Regístrate aquí
+                ¿Ya tienes una cuenta?{' '}
+                <Link href="/aula-virtual" className="underline text-primary font-semibold hover:text-primary/80">
+                    Inicia sesión aquí
                 </Link>
             </p>
         </div>

@@ -2,7 +2,7 @@ import { LoginForm } from '@/components/aula-virtual/login-form';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Aula Virtual',
+  title: 'Aula Virtual - Iniciar Sesión',
   description: 'Accede a nuestra plataforma de aprendizaje en línea.',
 };
 
