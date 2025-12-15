@@ -3,6 +3,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { Metadata } from 'next';
+import React from 'react';
 
 const originalContent = `Bienvenidos a Ibérica
 Somos una institución de capacitación mexicana que nace con una convicción clara: unir el conocimiento, las habilidades y las destrezas con la virtud ética para transformar la realidad de nuestro país. Bajo el lema “Talento con evidencia, competencias con impacto”, formamos profesionales íntegros, críticos y socialmente responsables, capaces de responder a los desafíos del siglo XXI.
@@ -58,19 +59,29 @@ export default async function NosotrosPage() {
   const { optimizedContent, suggestedKeywords } = await getOptimizedContent();
   const aboutUsImage = PlaceHolderImages.find(img => img.id === 'about-us');
 
+  const parseLine = (line: string) => {
+    const parts = line.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, i) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={i}>{part.slice(2, -2)}</strong>;
+      }
+      return part;
+    });
+  };
+
   const renderContent = () => {
     return optimizedContent.split('\n').filter(line => line.trim() !== '').map((line, index) => {
       const trimmedLine = line.trim();
       if (trimmedLine.startsWith('## ')) {
-        return <h2 key={index} className="text-2xl md:text-3xl font-headline mt-8 mb-4 text-primary">{trimmedLine.substring(3)}</h2>;
+        return <h2 key={index} className="text-2xl md:text-3xl font-headline mt-8 mb-4 text-primary">{parseLine(trimmedLine.substring(3))}</h2>;
       }
       if (trimmedLine.startsWith('### ')) {
-        return <h3 key={index} className="text-xl md:text-2xl font-headline mt-6 mb-3 text-primary/90">{trimmedLine.substring(4)}</h3>;
+        return <h3 key={index} className="text-xl md:text-2xl font-headline mt-6 mb-3 text-primary/90">{parseLine(trimmedLine.substring(4))}</h3>;
       }
       if (trimmedLine.startsWith('- ')) {
-        return <li key={index} className="ml-5 list-disc mb-2">{trimmedLine.substring(2)}</li>;
+        return <li key={index} className="ml-5 list-disc mb-2">{parseLine(trimmedLine.substring(2))}</li>;
       }
-      return <p key={index} className="mb-4 leading-relaxed">{trimmedLine}</p>;
+      return <p key={index} className="mb-4 leading-relaxed">{parseLine(trimmedLine)}</p>;
     });
   };
 
