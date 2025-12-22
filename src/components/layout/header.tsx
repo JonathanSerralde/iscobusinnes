@@ -4,16 +4,35 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { GraduationCap, Menu, X } from 'lucide-react';
+import { GraduationCap, Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
+
 
 const navLinks = [
   { href: '/', label: 'Inicio' },
   { href: '/nosotros', label: 'Nosotros' },
   { href: '/oferta-formativa', label: 'Oferta Formativa' },
-  { href: '/servicios', label: 'Servicios' },
+  { 
+    href: '/servicios', 
+    label: 'Servicios',
+    subLinks: [
+      { href: '/servicios/certificacion', label: 'Certificación de Competencias' },
+      { href: '/servicios/capacitacion-corporativa', label: 'Capacitación Corporativa' },
+      { href: '/servicios/consultoria-educativa', label: 'Consultoría Educativa' },
+    ] 
+  },
   { href: '/aula-virtual', label: 'Aula Virtual' },
   { href: '/contacto', label: 'Contacto' },
 ];
@@ -22,11 +41,55 @@ export function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const NavLink = ({ href, label, isMobile = false }: { href: string; label: string, isMobile?: boolean }) => {
-    const isActive = pathname === href;
+  const NavLink = ({ href, label, isMobile = false, subLinks }: { href: string; label: string, isMobile?: boolean, subLinks?: {href: string, label: string}[] }) => {
+    const isActive = pathname.startsWith(href);
+
+    if (subLinks) {
+      if (isMobile) {
+        return (
+          <Collapsible>
+            <CollapsibleTrigger className="flex justify-between items-center w-full text-lg py-2 text-foreground/80 hover:text-primary transition-colors">
+              {label} <ChevronDown className="h-4 w-4" />
+            </CollapsibleTrigger>
+            <CollapsibleContent className="pl-4 flex flex-col gap-2 mt-2">
+              {subLinks.map(subLink => (
+                 <SheetClose asChild key={subLink.href}>
+                   <Link href={subLink.href} className={cn("text-base text-foreground/70", pathname === subLink.href && "text-primary font-semibold")}>{subLink.label}</Link>
+                 </SheetClose>
+              ))}
+            </CollapsibleContent>
+          </Collapsible>
+        )
+      }
+      return (
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button variant="ghost" className={cn("transition-colors hover:text-primary px-0 hover:bg-transparent", isActive ? "text-primary font-semibold" : "text-foreground/80", "text-sm font-medium")}>
+              {label}
+              <ChevronDown className="ml-1 h-4 w-4" />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-64 p-2">
+            <div className="grid">
+              {subLinks.map((subLink) => (
+                <Link
+                  key={subLink.href}
+                  href={subLink.href}
+                  className={cn("p-2 rounded-md hover:bg-muted text-sm", pathname === subLink.href && "bg-muted font-semibold")}
+                >
+                  {subLink.label}
+                </Link>
+              ))}
+            </div>
+          </PopoverContent>
+        </Popover>
+      );
+    }
+
     const linkClass = cn(
       "transition-colors hover:text-primary",
-      isActive ? "text-primary font-semibold" : "text-foreground/80",
+      isActive && href !== '/' ? "text-primary font-semibold" : "text-foreground/80",
+      pathname === '/' && href === '/' ? "text-primary font-semibold" : "",
       isMobile ? "text-lg py-2" : "text-sm font-medium"
     );
 
@@ -81,7 +144,7 @@ export function Header() {
                       </Button>
                   </SheetClose>
                 </div>
-                <nav className="flex flex-col gap-4 mt-8">
+                <nav className="flex flex-col gap-2 mt-8">
                   {navLinks.map((link) => (
                     <NavLink key={link.href} {...link} isMobile />
                   ))}

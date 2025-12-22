@@ -55,6 +55,12 @@
       "imageHint": "business consulting"
     },
     {
+      "id": "service-certificacion",
+      "description": "A person proudly holding up a professional certificate",
+      "imageUrl": "https://images.unsplash.com/photo-1571260899241-318543c44244?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjZXJ0aWZpY2F0ZXxlbnwwfHx8fDE3NjU4ODYxMTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional certificate"
+    },
+    {
       "id": "contact",
       "description": "A clean and modern office reception desk",
       "imageUrl": "https://images.unsplash.com/photo-1505410603994-c3ac6269711f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxvZmZpY2UlMjByZWNlcHRpb258ZW58MHx8fHwxNzY1ODM0MTQ5fDA&ixlib=rb-4.1.0&q=80&w=1080",
