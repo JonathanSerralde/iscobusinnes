@@ -8,36 +8,56 @@ import type { Metadata } from 'next';
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
 
-const originalContent = `Bienvenidos al Instituto de Capacitación y Certificación Ibérica
-Somos una institución de capacitación mexicana que nace con una convicción clara: unir el conocimiento, las habilidades y las destrezas con la virtud ética para transformar la realidad de nuestro país. Bajo el lema “Talento con evidencia, competencias con impacto”, formamos profesionales íntegros, críticos y socialmente responsables, capaces de responder a los desafíos del siglo XXI.
- 
-Somos una comunidad formativa y académica humanista, incluyente e innovadora que articula tres grandes funciones:
-- Formación profesional de calidad,
-- Educación continua y actualización permanente,
-- Extensión y vinculación universitaria con los sectores social, público y productivo.
+const originalContent = `Instituto de Capacitación y Certificación Ibérica (Ibérica): Talento con Impacto
+Bienvenidos a la Evolución de sus Competencias
+Bienvenidos al Instituto de Capacitación y Certificación Ibérica, una institución líder dedicada a la formación profesional y social con alcance nacional e iberoamericano. Operamos como una instancia académica-técnica especializada bajo el amparo del International Supreme Council For Social, Business and Industrial Development, A.C..
+Bajo nuestro lema “Talento con evidencia, competencias con impacto”, nuestra misión es clara: transformar la realidad mediante la integración de conocimientos técnicos, habilidades prácticas y una sólida ética profesional. Formamos líderes íntegros, críticos y socialmente responsables, preparados para los desafíos del siglo XXI.
 
-Nuestro modelo educativo-formativo por competencias integra saberes disciplinares, habilidades cognitivas de alto nivel, competencias digitales y socioemocionales, sustentado en metodologías activas, neuroeducación y uso ético de la tecnología y la inteligencia artificial. Creemos en el aprendizaje a lo largo de la vida y en la universidad como espacio de diálogo, diversidad y construcción colectiva de soluciones.
- 
-Nuestra razón de ser
-En ICCI trabajamos para que cada persona:
-- Desarrolle un perfil profesional sólido y pertinente a las demandas actuales del mundo laboral.
-- Construya un proyecto de vida ético, responsable y comprometido con su comunidad.
-- Viva experiencias formativas en modalidades presenciales, mixtas y en línea, con acompañamiento cercano de docentes, tutores e instructores.
-- Participe en proyectos de investigación, intervención social y emprendimiento que generen impacto real en su entorno.
+Misión y Visión: Nuestro Norte Estratégico
+Nuestra Misión: "Potenciar el talento humano de Iberoamérica mediante programas de capacitación y certificación de competencias pertinentes, inclusivos y de alta calidad, que contribuyan al desarrollo social, educativo, empresarial e industrial." 
 
-Lo que nos distingue
-- Enfoque humanista y socialmente responsable: la persona está al centro de todos nuestros procesos.
-- Calidad académica y mejora continua: programas de formación actualizados, evaluación permanente y alineación con los estándares nacionales e internacionales de competencias.
-- Inclusión y equidad: reconocemos y atendemos la diversidad de trayectorias, contextos y necesidades de aprendizaje.
-- Innovación tecnopedagógica: integrando plataformas digitales, recursos abiertos e IA de manera ética y formativa.
-- Vinculación con el entorno: convenios y proyectos con instituciones, empresas, organizaciones civiles y comunidades para que el conocimiento universitario se traduzca en soluciones concretas.
+Nuestra Visión (2030): "Ser un referente iberoamericano en formación y certificación de competencias, reconocido por su rigor metodológico, su compromiso con la justicia social y su capacidad de generar oportunidades reales de desarrollo profesional y comunitario." 
+
+Modelo Educativo: Innovación, Humanismo y Competencia
+En Ibérica, somos una comunidad educativa humanista e innovadora. Nuestro modelo formativo se centra en el desarrollo integral de competencias, sustentado en la metodología de formación basada en estándares.
+
+Articulamos nuestro trabajo en cuatro pilares del saber:
+Saber (Conocimiento): Fundamentos teóricos sólidos. 
+Saber Hacer (Desempeño): Habilidades prácticas verificables. 
+Saber Ser (Actitudes): Ética y responsabilidad profesional. 
+Saber Convivir (Relación Social): Enfoque colaborativo e inclusivo. 
+
+Nos apoyamos en metodologías activas y herramientas tecnopedagógicas, promoviendo el uso ético de la tecnología y la inteligencia artificial para asegurar un aprendizaje significativo a lo largo de la vida.
+
+¿Qué Hacemos? Tres Ejes de Acción
+Para garantizar el desarrollo profesional de nuestra comunidad, articulamos tres funciones esenciales:
+
+Formación Profesional y Capacitación: Diseñamos e implementamos cursos, talleres y diplomados alineados a estándares de competencia laboral y normatividad oficial.
+
+Certificación con Valor Oficial: Empoderamos a nuestros egresados para evaluar y certificar sus competencias bajo estándares nacionales e internacionales (CONOCER), abriendo puertas a la movilidad laboral y el reconocimiento social.
+
+Vinculación Estratégica: Conectamos el ámbito académico con los sectores social, público y productivo mediante convenios con universidades, empresas y organismos gubernamentales.
+
+¿Por Qué Elegir Ibérica? (Nuestra Propuesta de Valor)
+Trabajamos para que cada persona logre desarrollar un perfil profesional sólido, relevante para las demandas laborales actuales en México e Iberoamérica.
+
+Lo que nos distingue:
+Enfoque Humanista e Inclusivo: La persona y sus derechos humanos son el centro de todos nuestros procesos. Fomentamos la igualdad de género y la atención a grupos vulnerables.
+
+Resultados Verificables: No solo enseñamos; generamos evidencias de desempeño. Priorizamos productos y prácticas reales sobre la teoría abstracta.
+
+Innovación Tecnopedagógica: Ofrecemos modalidades presenciales, en línea y mixtas, utilizando plataformas de gestión del aprendizaje y aulas virtuales para romper barreras geográficas.
+
+Respaldo y Autoridad (E-E-A-T): Nuestra calidad se sustenta en un equipo de especialistas certificados en múltiples estándares (como EC0076, EC0217.01, EC0307.01) y en alianzas sólidas con instituciones como la Universidad CUGS, CECATI y el Colegio Nacional de Evaluación y Certificación de Competencias.
+
+En el Instituto de Capacitación y Certificación Ibérica, el conocimiento universitario se traduce en soluciones concretas. Únete a una comunidad que transforma el talento en impacto real.
 `;
 
 const getOptimizedContent = React.cache(async (): Promise<OptimizeContentForSEOOutput> => {
   try {
     const optimizedData = await optimizeContentForSEO({
       websiteContent: originalContent,
-      keywords: 'capacitación, certificación, profesional, educación, México, competencias',
+      keywords: 'capacitación, certificación, profesional, educación, México, competencias, iberoamérica, CONOCER',
     });
     return optimizedData;
   } catch (error) {
