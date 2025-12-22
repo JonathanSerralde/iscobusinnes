@@ -208,10 +208,6 @@ export default async function NosotrosPage() {
             <DirectorMessage />
 
           </CardContent>
-          <CardFooter className="bg-muted/50 p-6 md:p-8 flex flex-col items-start gap-2 border-t">
-            <h3 className="text-xl font-headline text-primary">Palabras Clave Sugeridas (IA)</h3>
-            <p className="text-muted-foreground">{suggestedKeywords}</p>
-          </CardFooter>
         </Card>
       </div>
     </div>
