@@ -1,4 +1,3 @@
-import { RegisterForm } from '@/components/aula-virtual/register-form';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -8,8 +7,12 @@ export const metadata: Metadata = {
 
 export default function RegistroPage() {
   return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-14rem)] bg-background p-4">
-      <RegisterForm />
+    <div className="h-full w-full">
+      <iframe
+        src="https://academia.iberica.mx/register"
+        className="h-full w-full border-0"
+        title="Aula Virtual Registro"
+      />
     </div>
   );
 }

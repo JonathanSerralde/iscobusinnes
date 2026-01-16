@@ -1,4 +1,3 @@
-import { LoginForm } from '@/components/aula-virtual/login-form';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -8,8 +7,12 @@ export const metadata: Metadata = {
 
 export default function AulaVirtualPage() {
   return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-14rem)] bg-background p-4">
-       <LoginForm />
+    <div className="h-full w-full">
+      <iframe
+        src="https://academia.iberica.mx/login"
+        className="h-full w-full border-0"
+        title="Aula Virtual Iniciar Sesión"
+      />
     </div>
   );
 }
