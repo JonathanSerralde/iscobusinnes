@@ -92,9 +92,9 @@
     },
     {
       "id": "oferta-proteccion-civil",
-      "description": "Palacio de Bellas Artes in Mexico City",
-      "imageUrl": "https://images.unsplash.com/photo-1599949603592-b435a4095116?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwYWxhY2lvJTIwZGUlMjBiZWxsYXMlMjBhcnRlcyUyMG1leGljbyUyMGNpdHl8ZW58MHx8fHwxNzE4NjgzNjA0fDA&ixlib=rb-4.0.3&q=80&w=1080",
-      "imageHint": "landmark mexico"
+      "description": "Rubble from a building after an earthquake",
+      "imageUrl": "https://images.unsplash.com/photo-1505623772553-455b5f83861c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZXhpY28lMjBjaXR5JTIwZWFydGhxdWFrZXxlbnwwfHx8fDE3NjU5MjYwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "earthquake aftermath"
     },
     {
       "id": "oferta-inclusion",
