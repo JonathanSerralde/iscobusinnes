@@ -92,9 +92,9 @@
     },
     {
       "id": "oferta-proteccion-civil",
-      "description": "People in a computer lab learning",
-      "imageUrl": "https://images.unsplash.com/photo-1719159381981-1327b22aff9b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb21wdXRlciUyMGxhYnxlbnwwfHx8fDE3NjU4NDA3MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "computer lab"
+      "description": "Palacio de Bellas Artes in Mexico City",
+      "imageUrl": "https://images.unsplash.com/photo-1599949603592-b435a4095116?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwYWxhY2lvJTIwZGUlMjBiZWxsYXMlMjBhcnRlcyUyMG1leGljbyUyMGNpdHl8ZW58MHx8fHwxNzE4NjgzNjA0fDA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "landmark mexico"
     },
     {
       "id": "oferta-inclusion",
