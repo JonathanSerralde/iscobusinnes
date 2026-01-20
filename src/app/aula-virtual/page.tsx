@@ -9,7 +9,7 @@ export default function AulaVirtualPage() {
   return (
     <div className="h-full w-full">
       <iframe
-        src="https://academia.iberica.mx/login"
+        src="https://academia.iberica.mx/login/index.php"
         className="h-full w-full border-0"
         title="Aula Virtual Iniciar Sesión"
       />

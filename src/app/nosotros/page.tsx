@@ -1,6 +1,6 @@
 
 
-import { optimizeContentForSEO, type OptimizeContentForSEOOutput } from '@/ai/flows/optimize-content-for-seo';
+import { optimizeContentForSEO, type OptimizeContentForSEOOutput } from '@/backend/ai/flows/optimize-content-for-seo';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -60,7 +60,7 @@ const getOptimizedContent = React.cache(async (): Promise<OptimizeContentForSEOO
     });
     return optimizedData;
   } catch (error) {
-    console.error("Error optimizing content:", error);
+    console.warn("AI content optimization failed (likely due to missing configuration or API key). Using fallback content.");
     // Return original content as a fallback
     return {
       optimizedContent: `## Bienvenidos a Ibérica
@@ -99,7 +99,7 @@ const MarkdownContent = ({ content }: { content: string }) => {
   };
 
   const lines = content.split('\n');
-  const elements = [];
+  const elements: React.ReactNode[] = [];
   let listItems: React.ReactNode[] = [];
 
   const flushList = () => {

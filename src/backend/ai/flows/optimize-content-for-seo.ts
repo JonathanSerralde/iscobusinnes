@@ -10,7 +10,7 @@
  * - `OptimizeContentForSEOOutput`: The output type for the `optimizeContentForSEO` function.
  */
 
-import {ai} from '@/ai/genkit';
+import {ai} from '@/backend/ai/genkit';
 import {z} from 'genkit';
 
 const OptimizeContentForSEOInputSchema = z.object({
