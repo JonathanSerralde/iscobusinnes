@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { Metadata } from 'next';
 import React from 'react';
-import { Separator } from '@/components/ui/separator';
 
 const originalContent = `Instituto de Capacitación y Certificación Ibérica (Ibérica): Talento con Impacto
 Bienvenidos a la Evolución de sus Competencias
@@ -178,7 +177,7 @@ const DirectorMessage = () => {
 
 
 export default async function NosotrosPage() {
-  const { optimizedContent, suggestedKeywords } = await getOptimizedContent();
+  const { optimizedContent } = await getOptimizedContent();
   const aboutUsImage = PlaceHolderImages.find(img => img.id === 'about-us');
 
   return (
