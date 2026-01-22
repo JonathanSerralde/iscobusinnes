@@ -3,109 +3,109 @@
     {
       "id": "hero",
       "description": "Ibérica - Instituto de Capacitación y Certificación",
-      "imageUrl": "/img/Ibérica.svg",
+      "imageUrl": "/img/iberica-hero.svg",
       "imageHint": "iberica hero"
     },
     {
       "id": "about-us",
       "description": "Programas de educación profesional",
-      "imageUrl": "/img/Programas de Educación.svg",
+      "imageUrl": "/img/programas-educacion.svg",
       "imageHint": "education programs"
     },
     {
       "id": "director",
       "description": "Liderazgo educativo",
-      "imageUrl": "/img/Liderazgo Educativo.svg",
+      "imageUrl": "/img/liderazgo-educativo.svg",
       "imageHint": "leadership education"
     },
     {
       "id": "course-1",
       "description": "Diplomado en Liderazgo Educativo",
-      "imageUrl": "/img/Liderazgo Educativo.svg",
+      "imageUrl": "/img/liderazgo-educativo.svg",
       "imageHint": "leadership education"
     },
     {
       "id": "course-2",
       "description": "Diplomado en Gestión de Proyectos",
-      "imageUrl": "/img/Gestión de Proyectos.svg",
+      "imageUrl": "/img/gestion-proyectos.svg",
       "imageHint": "project management"
     },
     {
       "id": "course-3",
       "description": "Curso de Neuroeducación Aplicada",
-      "imageUrl": "/img/Neuroeducación Aplicada.svg",
+      "imageUrl": "/img/neuroeducacion-aplicada.svg",
       "imageHint": "neuroeducation applied"
     },
     {
       "id": "course-4",
       "description": "Certificación en Competencias Digitales",
-      "imageUrl": "/img/Competencias Digitales.svg",
+      "imageUrl": "/img/competencias-digitales.svg",
       "imageHint": "digital skills"
     },
     {
       "id": "service-1",
       "description": "Certificación de competencias profesionales",
-      "imageUrl": "/img/Certificación de Competencias.svg",
+      "imageUrl": "/img/certificacion-competencias.svg",
       "imageHint": "certificate graduation"
     },
     {
       "id": "service-2",
       "description": "Consultoría y asesoría profesional",
-      "imageUrl": "/img/Consultoría Educativa.svg",
+      "imageUrl": "/img/consultoria-educativa.svg",
       "imageHint": "business consulting"
     },
     {
       "id": "service-certificacion",
       "description": "Certificación de competencias profesionales",
-      "imageUrl": "/img/Certificación de Competencias.svg",
+      "imageUrl": "/img/certificacion-competencias.svg",
       "imageHint": "professional certificate"
     },
     {
       "id": "service-capacitacion",
       "description": "Capacitación corporativa profesional",
-      "imageUrl": "/img/Capacitación Corporativa.svg",
+      "imageUrl": "/img/capacitacion-corporativa.svg",
       "imageHint": "corporate training"
     },
     {
       "id": "service-consultoria",
       "description": "Consultoría educativa especializada",
-      "imageUrl": "/img/Consultoría Educativa.svg",
+      "imageUrl": "/img/consultoria-educativa.svg",
       "imageHint": "education consulting"
     },
     {
       "id": "contact",
       "description": "Contacto con Ibérica",
-      "imageUrl": "/img/Ibérica.svg",
+      "imageUrl": "/img/iberica-hero.svg",
       "imageHint": "office reception"
     },
     {
       "id": "oferta-educacion",
       "description": "Programas de educación profesional",
-      "imageUrl": "/img/Programas de Educación.svg",
+      "imageUrl": "/img/programas-educacion.svg",
       "imageHint": "education programs"
     },
     {
       "id": "oferta-continua",
       "description": "Educación continua y extensión universitaria",
-      "imageUrl": "/img/Educación Continua y Extensión Universitaria.svg",
+      "imageUrl": "/img/educacion-continua.svg",
       "imageHint": "continuing education"
     },
     {
       "id": "oferta-proteccion-civil",
       "description": "Protección civil y gestión de riesgos",
-      "imageUrl": "/img/Programas de Protección Civil y Gestión Integral de Riesgo de Desastre.svg",
+      "imageUrl": "/img/proteccion-civil.svg",
       "imageHint": "emergency services"
     },
     {
       "id": "oferta-inclusion",
       "description": "Programas de educación especial e inclusión",
-      "imageUrl": "/img/Programas de Educación Especial.svg",
+      "imageUrl": "/img/educacion-especial.svg",
       "imageHint": "special education"
     },
     {
       "id": "oferta-capital-humano",
       "description": "Formación de capital humano",
-      "imageUrl": "/img/Formación de Capital Humano.svg",
+      "imageUrl": "/img/formacion-capital-humano.svg",
       "imageHint": "human capital"
     }
   ]

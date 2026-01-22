@@ -14,7 +14,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center">
             <Image 
-              src="/img/Logo Ibérica 2.69 x 1.47.svg"
+              src="/img/logo-iberica.svg"
               alt="Ibérica"
               width={85}
               height={47}

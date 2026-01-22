@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   keywords: ['capacitación', 'certificación', 'educación', 'instituto', 'ibérica', 'méxico'],
   icons: {
     icon: { url: '/favicon.svg', type: 'image/svg+xml' },
-    apple: '/img/Logo Ibérica 3.5 x 3.5.svg',
+    apple: '/img/logo-iberica-square.svg',
   },
 };
 

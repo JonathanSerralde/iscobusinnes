@@ -125,7 +125,7 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center">
           <Image 
-            src="/img/Logo Ibérica 2.69 x 1.47.svg"
+            src="/img/logo-iberica.svg"
             alt="Ibérica - Instituto de Capacitación y Certificación"
             width={102}
             height={56}
@@ -154,7 +154,7 @@ export function Header() {
                   <SheetClose asChild>
                     <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
                       <Image 
-                        src="/img/Logo Ibérica 2.69 x 1.47.svg"
+                        src="/img/logo-iberica.svg"
                         alt="Ibérica"
                         width={85}
                         height={47}
