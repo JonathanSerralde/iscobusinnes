@@ -2,9 +2,10 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { GraduationCap, Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -33,7 +34,7 @@ const navLinks = [
       { href: '/servicios/consultoria-educativa', label: 'Consultoría Educativa' },
     ] 
   },
-  { href: '/aula-virtual', label: 'Aula Virtual' },
+  { href: 'https://academia.iberica.mx/login/index.php', label: 'Aula Virtual', external: true },
   { href: '/contacto', label: 'Contacto' },
 ];
 
@@ -41,8 +42,8 @@ export function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const NavLink = ({ href, label, isMobile = false, subLinks }: { href: string; label: string, isMobile?: boolean, subLinks?: {href: string, label: string}[] }) => {
-    const isActive = pathname.startsWith(href);
+  const NavLink = ({ href, label, isMobile = false, subLinks, external }: { href: string; label: string, isMobile?: boolean, subLinks?: {href: string, label: string}[], external?: boolean }) => {
+    const isActive = !external && pathname.startsWith(href);
 
     if (subLinks) {
       if (isMobile) {
@@ -93,6 +94,19 @@ export function Header() {
       isMobile ? "text-lg py-2" : "text-sm font-medium"
     );
 
+    // Handle external links
+    if (external) {
+      const externalLink = (
+        <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+          {label}
+        </a>
+      );
+      if (isMobile) {
+        return <SheetClose asChild>{externalLink}</SheetClose>;
+      }
+      return externalLink;
+    }
+
     const linkContent = <Link href={href} className={linkClass}>{label}</Link>;
 
     if (isMobile) {
@@ -109,9 +123,14 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <GraduationCap className="h-7 w-7 text-primary" />
-          <span className="font-headline text-xl font-bold text-foreground">Ibérica</span>
+        <Link href="/" className="flex items-center">
+          <Image 
+            src="/img/Logo Ibérica 2.69 x 1.47.svg"
+            alt="Ibérica - Instituto de Capacitación y Certificación"
+            width={102}
+            height={56}
+            priority
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -133,9 +152,13 @@ export function Header() {
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between border-b pb-4">
                   <SheetClose asChild>
-                    <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-                      <GraduationCap className="h-6 w-6 text-primary" />
-                      <span className="font-headline text-lg font-bold">Ibérica</span>
+                    <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
+                      <Image 
+                        src="/img/Logo Ibérica 2.69 x 1.47.svg"
+                        alt="Ibérica"
+                        width={85}
+                        height={47}
+                      />
                     </Link>
                   </SheetClose>
                    <SheetClose asChild>

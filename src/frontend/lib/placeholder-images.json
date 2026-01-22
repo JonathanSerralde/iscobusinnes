@@ -2,111 +2,111 @@
   "placeholderImages": [
     {
       "id": "hero",
-      "description": "Modern university building with students walking",
-      "imageUrl": "https://images.unsplash.com/photo-1618255630366-f402c45736f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dW5pdmVyc2l0eSUyMGNhbXB1c3xlbnwwfHx8fDE3NjU3NTM3MjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "university campus"
+      "description": "Ibérica - Instituto de Capacitación y Certificación",
+      "imageUrl": "/img/Ibérica.svg",
+      "imageHint": "iberica hero"
     },
     {
       "id": "about-us",
-      "description": "Diverse group of students collaborating in a bright, modern library",
-      "imageUrl": "https://images.unsplash.com/photo-1752920299211-28be8c9b0121?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdHVkZW50cyUyMGxpYnJhcnl8ZW58MHx8fHwxNzY1Nzg3Mzc1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "students library"
+      "description": "Programas de educación profesional",
+      "imageUrl": "/img/Programas de Educación.svg",
+      "imageHint": "education programs"
     },
     {
       "id": "director",
-      "description": "Portrait of a man in a suit in an office setting",
-      "imageUrl": "https://images.unsplash.com/photo-1567324216289-97cc4134f626?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwb3J0cmFpdCUyMG1hbnxlbnwwfHx8fDE3NjU4MjQ5Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "portrait man"
+      "description": "Liderazgo educativo",
+      "imageUrl": "/img/Liderazgo Educativo.svg",
+      "imageHint": "leadership education"
     },
     {
       "id": "course-1",
-      "description": "Instructor teaching a small group of engaged students in a classroom",
-      "imageUrl": "https://images.unsplash.com/photo-1649920442906-3c8ef428fb6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjbGFzc3Jvb20lMjB0ZWFjaGluZ3xlbnwwfHx8fDE3NjU3NzMwNDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "classroom teaching"
+      "description": "Diplomado en Liderazgo Educativo",
+      "imageUrl": "/img/Liderazgo Educativo.svg",
+      "imageHint": "leadership education"
     },
     {
       "id": "course-2",
-      "description": "Professionals in a workshop, working together on a project",
-      "imageUrl": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHdvcmtzaG9wfGVufDB8fHx8MTc2NTgzNzUxOHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "business workshop"
+      "description": "Diplomado en Gestión de Proyectos",
+      "imageUrl": "/img/Gestión de Proyectos.svg",
+      "imageHint": "project management"
     },
     {
       "id": "course-3",
-      "description": "Person focused on a laptop screen displaying complex data charts",
-      "imageUrl": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkYXRhJTIwYW5hbHlzaXN8ZW58MHx8fHwxNzY1ODM2NjA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "data analysis"
+      "description": "Curso de Neuroeducación Aplicada",
+      "imageUrl": "/img/Neuroeducación Aplicada.svg",
+      "imageHint": "neuroeducation applied"
     },
     {
       "id": "course-4",
-      "description": "Close up of a person's hands typing on a modern laptop",
-      "imageUrl": "https://images.unsplash.com/photo-1617913075074-2d877051155e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGlnaXRhbCUyMHNraWxsc3xlbnwwfHx8fDE3NjU4Mzc1MTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Certificación en Competencias Digitales",
+      "imageUrl": "/img/Competencias Digitales.svg",
       "imageHint": "digital skills"
     },
     {
       "id": "service-1",
-      "description": "A person receiving a certificate at a graduation ceremony",
-      "imageUrl": "https://images.unsplash.com/photo-1658235081562-a7f50e7e05b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y2VydGlmaWNhdGUlMjBncmFkdWF0aW9ufGVufDB8fHx8MTc2NTgzNzUxOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Certificación de competencias profesionales",
+      "imageUrl": "/img/Certificación de Competencias.svg",
       "imageHint": "certificate graduation"
     },
     {
       "id": "service-2",
-      "description": "Consultant advising a client in a professional office setting",
-      "imageUrl": "https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxidXNpbmVzcyUyMGNvbnN1bHRpbmd8ZW58MHx8fHwxNzY1ODM3NTE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Consultoría y asesoría profesional",
+      "imageUrl": "/img/Consultoría Educativa.svg",
       "imageHint": "business consulting"
     },
     {
       "id": "service-certificacion",
-      "description": "A person proudly holding up a professional certificate",
-      "imageUrl": "https://images.unsplash.com/photo-1571260899241-318543c44244?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjZXJ0aWZpY2F0ZXxlbnwwfHx8fDE3NjU4ODYxMTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Certificación de competencias profesionales",
+      "imageUrl": "/img/Certificación de Competencias.svg",
       "imageHint": "professional certificate"
     },
     {
       "id": "service-capacitacion",
-      "description": "A team of professionals collaborating during a corporate training session.",
-      "imageUrl": "https://images.unsplash.com/photo-1556761175-b413da4baf72?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb3Jwb3JhdGUlMjB0cmFpbmluZ3xlbnwwfHx8fDE3NjU4OTE3MjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Capacitación corporativa profesional",
+      "imageUrl": "/img/Capacitación Corporativa.svg",
       "imageHint": "corporate training"
     },
     {
       "id": "service-consultoria",
-      "description": "Education consultant working with a client in an office.",
-      "imageUrl": "https://images.unsplash.com/photo-1591115765322-2dfa2408a287?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBjb25zdWx0aW5nfGVufDB8fHx8MTc2NTkyMjk5Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Consultoría educativa especializada",
+      "imageUrl": "/img/Consultoría Educativa.svg",
       "imageHint": "education consulting"
     },
     {
       "id": "contact",
-      "description": "A clean and modern office reception desk",
-      "imageUrl": "https://images.unsplash.com/photo-1505410603994-c3ac6269711f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxvZmZpY2UlMjByZWNlcHRpb258ZW58MHx8fHwxNzY1ODM0MTQ5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Contacto con Ibérica",
+      "imageUrl": "/img/Ibérica.svg",
       "imageHint": "office reception"
     },
     {
       "id": "oferta-educacion",
-      "description": "University students walking on campus",
-      "imageUrl": "https://images.unsplash.com/photo-1693011142814-aa33d7d1535c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdHVkZW50cyUyMGNhbXB1c3xlbnwwfHx8fDE3NjU3NjkyNTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "students campus"
+      "description": "Programas de educación profesional",
+      "imageUrl": "/img/Programas de Educación.svg",
+      "imageHint": "education programs"
     },
     {
       "id": "oferta-continua",
-      "description": "Abstract digital learning concept",
-      "imageUrl": "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkaWdpdGFsJTIwbGVhcm5pbmd8ZW58MHx8fHwxNzY1ODQwNzA5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "digital learning"
+      "description": "Educación continua y extensión universitaria",
+      "imageUrl": "/img/Educación Continua y Extensión Universitaria.svg",
+      "imageHint": "continuing education"
     },
     {
       "id": "oferta-proteccion-civil",
-      "description": "Ambulance for emergency services",
-      "imageUrl": "https://images.unsplash.com/photo-1628348070843-415513494a86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxlbWVyZ2VuY3klMjBzZXJ2aWNlc3xlbnwwfHx8fDE3NjU5OTk2MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Protección civil y gestión de riesgos",
+      "imageUrl": "/img/Programas de Protección Civil y Gestión Integral de Riesgo de Desastre.svg",
       "imageHint": "emergency services"
     },
     {
       "id": "oferta-inclusion",
-      "description": "Diverse group of people in a meeting",
-      "imageUrl": "https://images.unsplash.com/photo-1622675363311-3e1904dc1885?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwbWVldGluZ3xlbnwwfHx8fDE3NjU3MzM0Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "diverse meeting"
+      "description": "Programas de educación especial e inclusión",
+      "imageUrl": "/img/Programas de Educación Especial.svg",
+      "imageHint": "special education"
     },
     {
       "id": "oferta-capital-humano",
-      "description": "Business people sitting in a row waiting",
-      "imageUrl": "https://images.unsplash.com/photo-1506787497326-c2736dde1bef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxidXNpbmVzcyUyMHBlb3BsZXxlbnwwfHx8fDE3NjU4MzU3NDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "business people"
+      "description": "Formación de capital humano",
+      "imageUrl": "/img/Formación de Capital Humano.svg",
+      "imageHint": "human capital"
     }
   ]
 }

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { GraduationCap } from 'lucide-react';
+import Image from 'next/image';
 
 const socialLinks = [
   { name: 'Facebook', href: '#' },
@@ -12,9 +12,13 @@ export function Footer() {
     <footer className="bg-muted text-muted-foreground border-t">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2">
-            <GraduationCap className="h-6 w-6 text-primary" />
-            <span className="font-headline text-lg font-bold text-foreground">Ibérica</span>
+          <div className="flex items-center">
+            <Image 
+              src="/img/Logo Ibérica 2.69 x 1.47.svg"
+              alt="Ibérica"
+              width={85}
+              height={47}
+            />
           </div>
           <p className="text-sm text-center">
             &copy; {new Date().getFullYear()} Ibérica. Todos los derechos reservados.

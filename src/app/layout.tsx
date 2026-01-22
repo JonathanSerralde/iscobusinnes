@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   description: 'Somos una institución de capacitación mexicana que une conocimiento, habilidades y destrezas con la virtud ética para transformar la realidad de nuestro país.',
   keywords: ['capacitación', 'certificación', 'educación', 'instituto', 'ibérica', 'méxico'],
   icons: {
-    icon: '/favicon.ico',
+    icon: { url: '/favicon.svg', type: 'image/svg+xml' },
+    apple: '/img/Logo Ibérica 3.5 x 3.5.svg',
   },
 };
 
@@ -25,7 +26,7 @@ export default function RootLayout({
     <html lang="es" className="scroll-smooth">
       <head>
         <meta charSet="UTF-8" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />

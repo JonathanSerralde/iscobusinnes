@@ -86,7 +86,24 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+// Normalize content that may have literal escape sequences from AI responses
+const normalizeContent = (content: string): string => {
+  // Replace literal \n\n and \n with actual newlines
+  let normalized = content
+    .replace(/\\n\\n/g, '\n\n')
+    .replace(/\\n/g, '\n');
+  
+  // Also handle cases where markdown headers are escaped or malformed
+  // Remove any leading/trailing whitespace from headers
+  normalized = normalized.replace(/^(#{2,4})\s*/gm, '$1 ');
+  
+  return normalized;
+};
+
 const MarkdownContent = ({ content }: { content: string }) => {
+  // Normalize the content first
+  const normalizedContent = normalizeContent(content);
+  
   const parseLine = (line: string) => {
     // Split by **bold** text, keeping the delimiters
     const parts = line.split(/(\*\*.*?\*\*)/g);
@@ -98,7 +115,7 @@ const MarkdownContent = ({ content }: { content: string }) => {
     });
   };
 
-  const lines = content.split('\n');
+  const lines = normalizedContent.split('\n');
   const elements: React.ReactNode[] = [];
   let listItems: React.ReactNode[] = [];
 
