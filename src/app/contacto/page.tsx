@@ -75,7 +75,9 @@ export default function ContactoPage() {
                         alt={contactImage.description}
                         data-ai-hint={contactImage.imageHint}
                         fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
                         className="object-cover"
+                        loading="lazy"
                     />
                 </div>
             )}

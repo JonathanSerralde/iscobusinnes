@@ -65,7 +65,9 @@ export default function OfertaFormativaPage() {
                             alt={image.description}
                             data-ai-hint={image.imageHint}
                             fill
+                            sizes="(max-width: 768px) 100vw, 40vw"
                             className="object-cover"
+                            loading="lazy"
                         />
                     )}
                 </div>

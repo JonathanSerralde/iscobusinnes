@@ -73,8 +73,10 @@ export default function Home() {
             alt={heroImage.description}
             data-ai-hint={heroImage.imageHint}
             fill
+            sizes="100vw"
             className="object-cover"
             priority
+            fetchPriority="high"
           />
         )}
         <div className="absolute inset-0 bg-black/60" />
@@ -144,7 +146,9 @@ export default function Home() {
                         alt={card.title}
                         data-ai-hint={image.imageHint}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
                       />
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />

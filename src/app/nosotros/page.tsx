@@ -208,7 +208,9 @@ export default async function NosotrosPage() {
                 alt={aboutUsImage.description} 
                 data-ai-hint={aboutUsImage.imageHint} 
                 fill 
+                sizes="(max-width: 1280px) 100vw, 1280px"
                 className="object-cover"
+                priority
               />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
                <div className="absolute bottom-0 left-0 p-6 md:p-8">

@@ -43,6 +43,7 @@ export default function ServiciosPage() {
             alt="Nuestros Servicios"
             data-ai-hint={serviceImage.imageHint}
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
