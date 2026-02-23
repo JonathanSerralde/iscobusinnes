@@ -9,7 +9,7 @@ import React from 'react';
 
 const originalContent = `Instituto de Capacitación y Certificación Ibérica (Ibérica): Talento con Impacto
 Bienvenidos a la Evolución de sus Competencias
-Bienvenidos al Instituto de Capacitación y Certificación Ibérica, una institución líder dedicada a la formación profesional y social con alcance nacional e iberoamericano. Operamos como una instancia académica-técnica especializada bajo el amparo del International Supreme Council For Social, Business and Industrial Development, A.C..
+Bienvenidos al Instituto de Capacitación y Certificación Ibérica, una institución líder dedicada a la formación profesional y social con alcance nacional e iberoamericano. Operamos como una instancia académica-técnica especializada.
 Bajo nuestro lema “Talento con evidencia, competencias con impacto”, nuestra misión es clara: transformar la realidad mediante la integración de conocimientos técnicos, habilidades prácticas y una sólida ética profesional. Formamos líderes íntegros, críticos y socialmente responsables, preparados para los desafíos del siglo XXI.
 
 Misión y Visión: Nuestro Norte Estratégico
@@ -138,7 +138,7 @@ const MarkdownContent = ({ content }: { content: string }) => {
       } else if (trimmedLine.startsWith('### ')) {
         elements.push(<h3 key={index} className="text-2xl font-headline font-semibold mt-6 mb-3 text-foreground/90">{parseLine(trimmedLine.substring(4))}</h3>);
       } else if (trimmedLine) {
-        elements.push(<p key={index} className="mb-4 leading-relaxed">{parseLine(trimmedLine)}</p>);
+        elements.push(<p key={index} className="mb-4 leading-relaxed text-justify">{parseLine(trimmedLine)}</p>);
       }
     }
   });
@@ -172,7 +172,7 @@ const DirectorMessage = () => {
           <h2 className="text-3xl font-headline font-bold mb-4 text-primary">
             Mensaje del Director General
           </h2>
-          <div className="space-y-4 text-foreground/90 text-base">
+          <div className="space-y-4 text-foreground/90 text-base text-justify">
             <p>Como Director general de ICCI, es para mí un honor darles la más cordial bienvenida a esta comunidad académica y formativa que nace con una convicción muy clara:</p>
             <p className="font-semibold text-lg text-center my-4 text-foreground italic px-4 py-2 border-l-4 border-primary bg-primary/5">Unir el conocimiento con la ética, la ciencia con la humanidad, la formación profesional con el compromiso social.</p>
             <p>Vivimos en un México y en un mundo que enfrentan desafíos complejos: desigualdad, violencia, crisis ambiental, transformaciones tecnológicas aceleradas y cambios profundos en el mundo del trabajo. Ante este contexto, en ICCI asumimos que la educación y formación continua no puede limitarse a transmitir información; su misión es formar personas capaces de pensar críticamente, sentir con empatía y actuar con responsabilidad.</p>
@@ -219,7 +219,7 @@ export default async function NosotrosPage() {
             </div>
           )}
           <CardContent className="p-6 md:p-10 bg-card">
-            <div className="text-base md:text-lg text-foreground/90 prose prose-neutral dark:prose-invert max-w-none">
+            <div className="text-base md:text-lg text-foreground/90 prose prose-neutral dark:prose-invert max-w-none text-justify">
               <MarkdownContent content={optimizedContent} />
             </div>
 

@@ -165,7 +165,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
             <Button asChild variant="outline">
                 <Link href="/oferta-formativa" className="text-sm">
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Volver a Oferta Formativa
+                    Volver a Oferta de Educación Continua
                 </Link>
             </Button>
           </div>

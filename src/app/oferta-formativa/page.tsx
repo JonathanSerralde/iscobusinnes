@@ -7,8 +7,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Oferta Formativa',
-  description: 'Descubre nuestra oferta formativa en diplomados, cursos y certificaciones para potenciar tu desarrollo profesional.',
+  title: 'Oferta de Educación Continua',
+  description: 'Descubre nuestra oferta de educación continua en diplomados, cursos y certificaciones para potenciar tu desarrollo profesional.',
 };
 
 const courses = [
@@ -47,7 +47,7 @@ export default function OfertaFormativaPage() {
     <div className="bg-background py-12 md:py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-headline text-primary">Oferta Formativa</h1>
+          <h1 className="text-4xl md:text-5xl font-headline text-primary">Oferta de Educación Continua</h1>
           <p className="mt-4 text-lg max-w-2xl mx-auto text-foreground/80">
             Programas diseñados para impulsar tu carrera y generar un impacto positivo en tu entorno.
           </p>

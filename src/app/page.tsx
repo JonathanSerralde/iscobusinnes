@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ArrowRight, BookOpen, Briefcase, GraduationCap } from 'lucide-react';
+import { ArrowRight, BookOpen, Briefcase, GraduationCap, School } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const featureCards = [
@@ -14,7 +14,13 @@ const featureCards = [
     icon: <GraduationCap className="w-8 h-8 text-primary" />,
   },
   {
-    title: "Oferta Formativa",
+    title: "Oferta Educativa",
+    description: "Bachillerato modular con validez oficial. Estudia a tu ritmo.",
+    href: "/oferta-educativa",
+    icon: <School className="w-8 h-8 text-primary" />,
+  },
+  {
+    title: "Oferta de Educación Continua",
     description: "Explora nuestros diplomados, cursos y certificaciones.",
     href: "/oferta-formativa",
     icon: <BookOpen className="w-8 h-8 text-primary" />,
@@ -128,7 +134,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-headline">
-              Nuestra <span className="text-primary">Oferta Formativa</span>
+              Nuestra <span className="text-primary">Oferta</span>
             </h2>
             <p className="mt-4 text-lg text-foreground/80">
               Descubre un universo de posibilidades para tu crecimiento profesional.

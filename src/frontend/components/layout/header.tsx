@@ -24,7 +24,8 @@ import {
 const navLinks = [
   { href: '/', label: 'Inicio' },
   { href: '/nosotros', label: 'Nosotros' },
-  { href: '/oferta-formativa', label: 'Oferta Formativa' },
+  { href: '/oferta-educativa', label: 'Oferta Educativa' },
+  { href: '/oferta-formativa', label: 'Oferta de Educación Continua' },
   { 
     href: '/servicios', 
     label: 'Servicios',
