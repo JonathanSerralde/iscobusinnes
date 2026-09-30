@@ -2,86 +2,1535 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ═══════════════════════════════════════════════════════════════════════
+   ISCOBUSINESS DESIGN SYSTEM — NUEVA ARQUITECTURA CSS
+   ─────────────────────────────────────────────────────────────────────
+   Referencia: nuevo_plan_css_iscobusiness.md
+   ADN Visual → Instituto Ibérica (iberica.iscobusiness.edu.mx)
+   Arquitectura Editorial → UNESCO
+   Lógica de Color por Área → Fundación Carlos Slim
+   Identidad Final → ISCOBusiness
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────
+   01 — TOKENS
+   Colores base, por área, semánticos, dataviz, superficies,
+   tipografía, radios, sombras, spacing, contenedores.
+   ───────────────────────────────────────────────────────────────────── */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 0 72% 51%; /* Red */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 240 5% 45.1%;
-    --accent: 0 84.2% 60.2%; /* Destructive Red as Accent */
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 72% 51%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* ── Tipografía Principal y Editorial ────────────────────────── */
+    --font-sans: var(--font-manrope, 'Manrope'), "Segoe UI", Arial, sans-serif;
+    --font-serif: var(--font-manrope, 'Manrope'), "Segoe UI", Arial, sans-serif;
+    --font-mono: Menlo, Monaco, Consolas, monospace;
+
+    /* ── CAPA 1 — Base Institucional (§5.1) ─────────────────────── */
+    --navy: #083665;
+    --blue: #075fba;
+    --blue-bright: #0788dc;
+    --cyan: #13b6e8;
+
+    --ink: #10243f;
+    --ink-soft: #53657b;
+
+    --white: #ffffff;
+    --pearl: #f7f9fb;
+    --blue-mist: #f3f8fc;
+    --blue-pale: #eaf5fd;
+
+    --line: #dbe5ee;
+    --line-strong: #c5d5e3;
+
+    /* ── Alias Institucionales ISCOBusiness ──────────────────────── */
+    --isco-navy: #083665;
+    --isco-blue: #075fba;
+    --isco-blue-bright: #0788dc;
+    --isco-cyan: #0284c7;
+    --isco-ink: #10243f;
+    --isco-ink-soft: #53657b;
+    --isco-white: #ffffff;
+    --isco-pearl: #f7f9fb;
+    --isco-blue-mist: #f3f8fc;
+    --isco-blue-pale: #eaf5fd;
+    --isco-line: #dbe5ee;
+    --isco-line-strong: #c5d5e3;
+    --isco-green: #0d9488;
+    --isco-green-strong: #0f766e;
+    --isco-green-soft: #f0fdfa;
+    --isco-violet: #4f46e5;
+    --isco-violet-strong: #4338ca;
+    --isco-violet-soft: #eef2ff;
+    --isco-gold: #d97706;
+    --isco-gold-bright: #b45309;
+    --isco-gold-soft: #fffbeb;
+
+    /* ── CAPA 2 — Colores por Área (§6) ─────────────────────────── */
+
+    /* Educación Continua (§6.1) */
+    --green: #20ad91;
+    --green-strong: #14966f;
+    --green-soft: #e7f6f1;
+
+    /* Certificación (§6.2) */
+    --violet: #7569e8;
+    --violet-strong: #6358d2;
+    --violet-soft: #efedfc;
+
+    /* Vinculación (§6.3) */
+    --gold: #b38a36;
+    --gold-bright: #c49a3d;
+    --gold-soft: #f5eddc;
+
+    /* Impacto / Datos / Observatorio (§6.4) */
+    --impact-blue: #075fba;
+    --impact-cyan: #13b6e8;
+    --impact-green: #20ad91;
+
+    /* ── CAPA 3 — Estados Semánticos (§6.5) ─────────────────────── */
+    --success: #14966f;
+    --success-soft: #e7f6f1;
+
+    --warning: #b78324;
+    --warning-soft: #faf3e3;
+
+    --danger: #8b1748;
+    --danger-soft: #f8e8ec;
+
+    --info: #0788dc;
+    --info-soft: #eaf5fd;
+
+    /* ── Variables Públicas del Sistema (§11) ────────────────────── */
+    --background: var(--isco-white);
+    --foreground: var(--isco-ink);
+
+    --card: #ffffff;
+    --card-foreground: var(--isco-ink);
+
+    --popover: #ffffff;
+    --popover-foreground: var(--isco-ink);
+
+    --primary: var(--isco-blue);
+    --primary-foreground: #ffffff;
+
+    --secondary: var(--isco-navy);
+    --secondary-foreground: #ffffff;
+
+    --muted: var(--isco-blue-mist);
+    --muted-foreground: var(--isco-ink-soft);
+
+    --accent: var(--isco-blue-pale);
+    --accent-foreground: var(--isco-blue);
+
+    --border: var(--isco-line);
+    --input: var(--isco-line-strong);
+    --ring: var(--isco-blue);
+
+    --destructive: #8b1748;
+    --destructive-foreground: #ffffff;
+
+    --success-color: var(--isco-green-strong);
+    --warning-color: #b78324;
+    --info-color: var(--isco-blue-bright);
+
+    /* ── Radios de Borde (§15) ───────────────────────────────────── */
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 30px;
+    --radius: 12px;
+
+    /* ── Espaciado de Layout ─────────────────────────────────────── */
+    --spacing: 0.25rem;
+
+    /* ── Sombras Institucionales (§16) ───────────────────────────── */
+    --shadow-sm: 0 10px 30px #0e335314;
+    --shadow-md: 0 24px 70px #0e33531f;
+
+    /* ── Dataviz / Charts (§12) ──────────────────────────────────── */
+    --data-blue: #075fba;
+    --data-cyan: #13b6e8;
+    --data-green: #20ad91;
+    --data-gold: #b38a36;
+    --data-violet: #7569e8;
+
+    --chart-1: var(--data-blue);
+    --chart-2: var(--data-cyan);
+    --chart-3: var(--data-green);
+    --chart-4: var(--data-gold);
+    --chart-5: var(--data-violet);
+
+    /* ── Superficies por Categoría (§13) ─────────────────────────── */
+    --surface-prepa: #eaf5fd;
+    --surface-continua: #e7f6f1;
+    --surface-certificacion: #efedfc;
+    --surface-vinculacion: #f5eddc;
+    --surface-impacto: #f3f8fc;
+    --surface-transparencia: #f7f9fb;
+
+    /* ── Barra Lateral ──────────────────────────────────────────── */
+    --sidebar: #f7f9fb;
+    --sidebar-foreground: #10243f;
+
+    --sidebar-primary: #075fba;
+    --sidebar-primary-foreground: #ffffff;
+
+    --sidebar-accent: #eaf5fd;
+    --sidebar-accent-foreground: #075fba;
+
+    --sidebar-border: #dbe5ee;
+    --sidebar-ring: #075fba;
+
+    /* ── Tokens con prefijo institucional --isco-* (§10, §43) ──── */
+    --isco-navy: #083665;
+    --isco-blue: #075fba;
+    --isco-blue-bright: #0788dc;
+    --isco-cyan: #13b6e8;
+    --isco-learning: #2569d8;
+
+    --isco-green: #20ad91;
+    --isco-green-strong: #14966f;
+    --isco-green-soft: #e7f6f1;
+    --isco-success: #14966f;
+
+    --isco-violet: #7569e8;
+    --isco-violet-strong: #6358d2;
+    --isco-violet-soft: #efedfc;
+
+    --isco-gold: #b38a36;
+    --isco-gold-bright: #c49a3d;
+    --isco-gold-soft: #f5eddc;
+    --isco-gold-pale: #f5eddc;
+    --isco-amber: #f2b43c;
+
+    --isco-danger: #8b1748;
+    --isco-danger-soft: #f8e8ec;
+
+    --isco-warning: #b78324;
+    --isco-warning-soft: #faf3e3;
+
+    --isco-ink: #10243f;
+    --isco-ink-soft: #53657b;
+
+    --isco-white: #ffffff;
+    --isco-pearl: #f7f9fb;
+    --isco-blue-pale: #eaf5fd;
+    --isco-blue-mist: #f3f8fc;
+    --isco-soft: #edf6fb;
+
+    --isco-line: #dbe5ee;
+    --isco-line-strong: #c5d5e3;
+
+    --isco-radius-sm: 12px;
+    --isco-radius-md: 20px;
+    --isco-radius-lg: 30px;
+
+    --isco-shadow-sm: 0 10px 30px #0e335314;
+    --isco-shadow-md: 0 24px 70px #0e33531f;
+
+    --isco-shell: 1280px;
+
+    --isco-success-soft: #e7f6f1;
+
+    /* ── Compatibilidad con Paleta CVC Extendida ──────────────── */
+    --cvc-ink: #102f4d;
+    --cvc-heading: #073c69;
+    --cvc-muted: #526d83;
+    --cvc-blue: #066fc4;
+    --cvc-blue-dark: #062f59;
+    --cvc-learning: #2569d8;
+    --cvc-cyan: #22b8df;
+    --cvc-green: #20ad91;
+    --cvc-gold: #c49a3d;
+    --cvc-amber: #f2b43c;
+    --cvc-violet: #7569e8;
+    --cvc-burgundy: #8b1748;
+    --cvc-line: #ccdde8;
+    --cvc-surface: #ffffff;
+    --cvc-soft: #edf6fb;
   }
 
+  /* ─────────────────────────────────────────────────────────────────
+     07 — DARK MODE — Tema Oscuro Institucional Navy (§33)
+     ───────────────────────────────────────────────────────────────── */
   .dark {
-    --background: 240 5% 15%;
-    --foreground: 0 0% 98%;
-    --card: 240 5% 18%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 72% 51%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 20%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 0 84.2% 60.2%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 25%;
-    --input: 240 3.7% 15.9%;
-    --ring: 0 72% 51%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: #071827;
+    --foreground: #f2f7fb;
+
+    --card: #0b2236;
+    --card-foreground: #f2f7fb;
+
+    --popover: #0b2236;
+    --popover-foreground: #f2f7fb;
+
+    --primary: #39a3f1;
+    --primary-foreground: #041829;
+
+    --secondary: #eaf5fd;
+    --secondary-foreground: #083665;
+
+    --muted: #102c43;
+    --muted-foreground: #aac0d1;
+
+    --accent: #103656;
+    --accent-foreground: #75c7f4;
+
+    --border: #24435b;
+    --input: #31526a;
+
+    --ring: #39a3f1;
+
+    --destructive: #d45b72;
+    --destructive-foreground: #ffffff;
+
+    --sidebar: #081d2e;
+    --sidebar-foreground: #edf6fc;
+
+    --sidebar-primary: #39a3f1;
+    --sidebar-primary-foreground: #041829;
+
+    --sidebar-accent: #103656;
+    --sidebar-accent-foreground: #75c7f4;
+
+    --sidebar-border: #24435b;
+    --sidebar-ring: #39a3f1;
+
+    --chart-1: #58aff1;
+    --chart-2: #45c8e8;
+    --chart-3: #58c6aa;
+    --chart-4: #d3ac58;
+    --chart-5: #9f94ef;
+
+    --isco-white: #0b2236;
+    --isco-pearl: #071827;
+    --isco-line: #24435b;
+    --isco-line-strong: #31526a;
+    --isco-ink: #f2f7fb;
+    --isco-ink-soft: #aac0d1;
+
+    /* Dark mode surfaces */
+    --surface-prepa: #0c2a42;
+    --surface-continua: #0b2b2b;
+    --surface-certificacion: #1a1636;
+    --surface-vinculacion: #221c0d;
+    --surface-impacto: #0b2236;
+    --surface-transparencia: #081d2e;
   }
 }
 
+/* ─────────────────────────────────────────────────────────────────────
+   02 — FOUNDATIONS
+   body, tipografía base, headings, links, focus, selección.
+   ───────────────────────────────────────────────────────────────────── */
 @layer base {
   * {
     @apply border-border;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    color: var(--foreground);
+    font-weight: 800;
+  }
+
+  h1 {
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+
+  /* ── Sistema de Títulos Ampliado (§19) ──────────────────────── */
+
+  /* Display — títulos monumentales */
+  .display-title {
+    font-family: var(--font-sans);
+    font-size: clamp(4rem, 6.5vw, 7rem);
+    line-height: 0.92;
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    color: var(--foreground);
+  }
+
+  /* Page title — título principal de una página interior */
+  .page-title {
+    font-family: var(--font-sans);
+    font-size: clamp(2.6rem, 4.2vw, 4.5rem);
+    line-height: 1.02;
+    font-weight: 790;
+    letter-spacing: -0.04em;
+    color: var(--foreground);
+  }
+
+  /* Hero — H1 Principal del Hero (§19, lectura editorial equilibrada UNESCO) */
+  .hero-title,
+  .hero-h1 {
+    font-family: var(--font-sans);
+    font-size: clamp(2.25rem, 3.6vw, 3.75rem);
+    line-height: 1.08;
+    font-weight: 780;
+    letter-spacing: -0.035em;
+    color: var(--foreground);
+  }
+
+  @media (max-width: 640px) {
+    .hero-title,
+    .hero-h1 {
+      font-size: clamp(1.85rem, 7vw, 2.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+    }
+  }
+
+  /* Section Title — H2 de Sección (§19) */
+  .section-title {
+    font-family: var(--font-sans);
+    font-size: clamp(2rem, 3.4vw, 3.4rem);
+    line-height: 1.08;
+    font-weight: 750;
+    letter-spacing: -0.042em;
+    color: var(--foreground);
+  }
+
+  /* Section Title Small — para subsecciones */
+  .section-title-small {
+    font-family: var(--font-sans);
+    font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+    line-height: 1.15;
+    font-weight: 740;
+    letter-spacing: -0.03em;
+    color: var(--foreground);
+  }
+
+  /* Article Title — títulos de artículos y tarjetas editoriales */
+  .article-title {
+    font-family: var(--font-sans);
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    line-height: 1.25;
+    font-weight: 760;
+    letter-spacing: -0.02em;
+    color: var(--foreground);
+  }
+
+  /* Metric Number — cifras de impacto y estadísticas (§25) */
+  .metric-number {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--secondary);
+    font-family: var(--font-sans);
+  }
+
+  /* Section Lead — texto introductorio de secciones */
+  .section-lead {
+    font-size: clamp(1.1rem, 1.4vw, 1.3rem);
+    line-height: 1.65;
+    color: var(--muted-foreground);
+    max-width: 68ch;
+  }
+
+  .text-lead {
+    font-size: 1.125rem;
+    line-height: 1.65;
+  }
+
+  /* Body — texto base institucional */
+  .body {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--foreground);
+  }
+
+  /* Body Small — texto reducido */
+  .body-small {
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+
+  /* Caption — pies de foto, micro-texto */
+  .caption {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--muted-foreground);
+  }
+
+  .text-editorial {
+    font-family: var(--font-sans);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Eyebrow / Kicker (§19)
+   ───────────────────────────────────────────────────────────────────── */
+@layer components {
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+
+  .eyebrow-gold {
+    color: var(--gold);
+  }
+
+  .eyebrow-green {
+    color: var(--green);
+  }
+
+  .eyebrow-violet {
+    color: var(--violet);
+  }
+
+  .eyebrow-cyan,
+  .eyebrow-light {
+    color: var(--cyan);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   03 — LAYOUT
+   Shell responsive, secciones, contenedores.
+   ───────────────────────────────────────────────────────────────────── */
+@layer components {
+  .shell {
+    width: min(100% - 48px, 1280px);
+    margin-inline: auto;
+  }
+
+  @media (max-width: 900px) {
+    .shell {
+      width: min(100% - 34px, 760px);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .shell {
+      width: min(100% - 28px, 560px);
+    }
+  }
+
+  .shell-narrow {
+    width: min(100% - 48px, 960px);
+    margin-inline: auto;
+  }
+
+  .shell-wide {
+    width: min(100% - 48px, 1440px);
+    margin-inline: auto;
+  }
+}
+
+/* ── Espaciado Vertical de Secciones (§18) ───────────────────────── */
+@layer components {
+  .section {
+    padding-block: 112px;
+  }
+
+  @media (max-width: 900px) {
+    .section {
+      padding-block: 88px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .section {
+      padding-block: 72px;
+    }
+  }
+
+  .section-padding {
+    padding-block: clamp(64px, 8vw, 112px);
+  }
+
+  .section-padding-sm {
+    padding-block: clamp(40px, 5vw, 72px);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   04 — COMPONENTS — TARJETAS
+   BaseCard, RouteCard, MetricCard, ArticleCard, DocumentCard,
+   StatusCard, ProcessCard (§14, §25, §26, §27, §28, §30)
+   ───────────────────────────────────────────────────────────────────── */
+@layer components {
+  /* Base Card */
+  .card {
+    background: var(--card);
+    color: var(--card-foreground);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .card--interactive {
+    transition:
+      transform 0.28s ease,
+      box-shadow 0.32s ease,
+      border-color 0.28s ease;
+  }
+
+  .card--interactive:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .card--interactive:focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 4px;
+  }
+
+  /* Tarjeta institucional ISCOBusiness */
+  .isco-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: clamp(24px, 3vw, 40px);
+    box-shadow: var(--shadow-sm);
+    transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+  }
+
+  .isco-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Acentos por vertical */
+  .isco-card-accent {
+    border-top: 3px solid var(--primary);
+  }
+
+  .isco-card-gold {
+    border-top: 3px solid var(--gold);
+  }
+
+  .isco-card-cyan {
+    border-top: 3px solid var(--cyan);
+  }
+
+  .isco-card-green {
+    border-top: 3px solid var(--green);
+  }
+
+  .isco-card-violet {
+    border-top: 3px solid var(--violet);
+  }
+
+  .isco-card-static {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: clamp(24px, 3vw, 40px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .process-card {
+    border-radius: 24px;
+    padding: 30px 26px 28px;
+    min-height: 245px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* ── Metric Card — cifras de impacto (§25) ─────────────────── */
+  .metric-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: clamp(20px, 3vw, 36px);
+    text-align: center;
+    transition: transform 280ms ease, box-shadow 280ms ease;
+  }
+
+  .metric-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* ── Article Card — editorial / noticias (§27) ─────────────── */
+  .article-card {
+    display: grid;
+    gap: 16px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform 280ms ease, box-shadow 280ms ease;
+  }
+
+  .article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .article-card-featured {
+    border-radius: var(--radius-lg);
+  }
+
+  /* ── Document Card — transparencia (§28) ───────────────────── */
+  .document-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    transition: border-color 200ms ease;
+  }
+
+  .document-card:hover {
+    border-color: var(--primary);
+  }
+
+  /* ── Status Card — unidades futuras / ecosistema (§30) ─────── */
+  .status-card {
+    background: #ffffff;
+    border: 1px dashed var(--line-strong);
+    border-radius: var(--radius-md);
+    padding: clamp(24px, 3vw, 40px);
+  }
+
+  .status-card--active {
+    border-style: solid;
+    border-color: var(--border);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* ── Route Card — navegación de rutas y oferta (§14, §23) ──── */
+  .route-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: clamp(24px, 3vw, 36px);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+  }
+
+  .route-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* ── Service Card — servicios educativos y catálogo (§14) ─── */
+  .service-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: clamp(20px, 2.5vw, 32px);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* ── Action Card — llamadas a la acción modulares (§14) ───── */
+  .action-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: clamp(24px, 3vw, 36px);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+  }
+
+  .action-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+  }
+
+  /* ── Impact Card — ejes de impacto y ODS (§14, §25) ───────── */
+  .impact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: clamp(24px, 3vw, 36px);
+    box-shadow: var(--shadow-sm);
+    transition: transform 280ms ease, box-shadow 280ms ease;
+  }
+
+  .impact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* ── Project Card — iniciativas y proyectos en territorio (§14) */
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 280ms ease, box-shadow 280ms ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* ── Event Card — eventos institucionales y convocatorias (§14) */
+  .event-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: clamp(20px, 2.5vw, 30px);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: transform 240ms ease, box-shadow 240ms ease;
+  }
+
+  .event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* ── Partner Card — aliados institucionales (§14) ─────────── */
+  .partner-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: clamp(20px, 2.5vw, 28px);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 240ms ease, box-shadow 240ms ease;
+  }
+
+  .partner-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* ── ResourceCard — biblioteca y descargas (§14) ──────────── */
+  .resource-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: clamp(20px, 2.5vw, 28px);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+  }
+
+  .resource-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   04 — COMPONENTS — BOTONES (§22)
+   Primario, Secundario, Dorado, + Botones por Área
+   ───────────────────────────────────────────────────────────────────── */
+@layer components {
+  /* Botón Primario — azul institucional (§22.1) */
+  .button-primary,
+  .btn-primary {
+    min-height: 48px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    color: #ffffff !important;
+    background: linear-gradient(120deg, #075fba, #0788dc 58%, #13b6e8);
+    font-weight: 800;
+    font-family: var(--font-sans);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    line-height: 1.2;
+  }
+
+  .button-primary:hover,
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px #075fba38;
+  }
+
+  /* Botón Secundario (§22.2) */
+  .button-secondary,
+  .btn-secondary {
+    min-height: 48px;
+    padding: 12px 18px;
+    color: var(--primary);
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-weight: 800;
+    font-family: var(--font-sans);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1.2;
+  }
+
+  .button-secondary:hover,
+  .btn-secondary:hover {
+    background: var(--accent);
+    border-color: var(--primary);
+    transform: translateY(-1px);
+  }
+
+  /* Botón Dorado */
+  .button-gold,
+  .btn-gold {
+    min-height: 48px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    color: #ffffff !important;
+    background: linear-gradient(120deg, var(--gold), var(--gold-bright));
+    font-weight: 800;
+    font-family: var(--font-sans);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+  }
+
+  .button-gold:hover,
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px #b38a3638;
+  }
+
+  /* ── Botones por Área (§22.3) ──────────────────────────────── */
+
+  /* Educación Continua — verde */
+  .button-continua,
+  .btn-continua,
+  .isco-btn-continua {
+    min-height: 48px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #20ad91, #14966f);
+    font-weight: 800;
+    font-family: var(--font-sans);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    line-height: 1.2;
+  }
+
+  .button-continua:hover,
+  .btn-continua:hover,
+  .isco-btn-continua:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px #20ad9138;
+  }
+
+  /* Certificación — violeta */
+  .button-certificacion,
+  .btn-certificacion,
+  .isco-btn-certificacion {
+    min-height: 48px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #7569e8, #6358d2);
+    font-weight: 800;
+    font-family: var(--font-sans);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    line-height: 1.2;
+  }
+
+  .button-certificacion:hover,
+  .btn-certificacion:hover,
+  .isco-btn-certificacion:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px #7569e838;
+  }
+
+  /* Vinculación — dorado */
+  .button-vinculacion,
+  .btn-vinculacion,
+  .isco-btn-vinculacion {
+    min-height: 48px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    color: #ffffff !important;
+    background: linear-gradient(135deg, #b38a36, #c49a3d);
+    font-weight: 800;
+    font-family: var(--font-sans);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    line-height: 1.2;
+  }
+
+  .button-vinculacion:hover,
+  .btn-vinculacion:hover,
+  .isco-btn-vinculacion:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px #b38a3638;
+  }
+
+  /* ── Compatibilidad con clases .isco-btn ───────────────────── */
+  .isco-btn {
+    border-radius: var(--radius-sm);
+    min-height: 48px;
+    padding: 12px 18px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    font-family: var(--font-sans);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 240ms ease;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1.2;
+  }
+
+  .isco-btn-primary {
+    background: linear-gradient(120deg, #075fba, #0788dc 58%, #13b6e8);
+    color: #ffffff !important;
+    border: none;
+  }
+
+  .isco-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px #075fba38;
+  }
+
+  .isco-btn-primary:focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 4px;
+  }
+
+  .isco-btn-secondary {
+    background: #ffffff;
+    color: var(--primary);
+    border: 1px solid var(--border);
+  }
+
+  .isco-btn-secondary:hover {
+    border-color: var(--primary);
+    background: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .isco-btn-gold {
+    background: var(--gold);
+    color: #ffffff !important;
+    border: none;
+  }
+
+  .isco-btn-gold:hover {
+    background: var(--gold-bright);
+    transform: translateY(-2px);
+  }
+
+  .isco-btn-lg {
+    min-height: 54px;
+    padding-inline: 22px;
+    font-size: 0.96rem;
+  }
+}
+
+/* ── CTA Textual ─────────────────────────────────────────────────── */
+@layer components {
+  .text-link {
+    color: var(--primary);
+    font-weight: 800;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap 0.18s ease, color 0.18s ease;
+  }
+
+  .text-link:hover {
+    color: var(--blue-bright);
+    gap: 8px;
+  }
+}
+
+/* ── Formularios y Controles ─────────────────────────────────────── */
+@layer components {
+  .form-control {
+    width: 100%;
+    min-height: 54px;
+    padding: 0 14px;
+    background: #ffffff;
+    border: 1px solid var(--input);
+    border-radius: 13px;
+    color: var(--foreground);
+    font-size: 0.95rem;
+    transition: border-color 200ms ease, outline 200ms ease;
+  }
+
+  .form-control:focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+    border-color: var(--primary);
+  }
+
+  .form-control[aria-invalid="true"] {
+    border-color: var(--destructive);
+  }
+
+  .isco-fieldset {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 24px;
+  }
+
+  .isco-input {
+    min-height: 54px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--input);
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    width: 100%;
+    transition: border-color 200ms ease, outline 200ms ease;
+    background: #ffffff;
+    color: var(--foreground);
+  }
+
+  .isco-input:focus {
+    outline: 3px solid var(--ring);
+    outline-offset: 4px;
+    border-color: var(--primary);
+  }
+
+  .isco-input[aria-invalid="true"] {
+    border-color: var(--destructive);
+    color: var(--destructive);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   05 — SECTIONS
+   Hero, gradientes, fondos por sección, footer stripe.
+   ───────────────────────────────────────────────────────────────────── */
+@layer components {
+  /* Hero Claro Suave (§31) */
+  .hero {
+    background:
+      radial-gradient(
+        circle at 85% 20%,
+        rgba(19, 182, 232, 0.16),
+        transparent 28rem
+      ),
+      linear-gradient(
+        125deg,
+        #ffffff 0%,
+        #f3f8fc 55%,
+        #eaf5fd 100%
+      );
+  }
+
+  /* Hero Oscuro Institucional (§31) */
+  .hero--dark {
+    background:
+      radial-gradient(
+        circle at 85% 20%,
+        rgba(19, 182, 232, 0.22),
+        transparent 24rem
+      ),
+      linear-gradient(
+        125deg,
+        #083665 0%,
+        #075fba 60%,
+        #08766e 100%
+      );
+    color: #ffffff;
+  }
+
+  /* Compatibilidad con isco-gradient-hero */
+  .isco-gradient-hero {
+    background:
+      radial-gradient(circle at 85% 20%, #13b6e822, transparent 24rem),
+      linear-gradient(125deg, #051d38 0%, #074d72 58%, #08766e 100%);
+    color: #ffffff;
+  }
+
+  .isco-gradient-hero h1,
+  .isco-gradient-hero h2,
+  .isco-gradient-hero h3,
+  .isco-gradient-hero h4,
+  .isco-gradient-hero p,
+  .isco-gradient-hero span {
+    color: inherit;
+  }
+
+  .isco-gradient-dark {
+    background:
+      radial-gradient(circle at 15% 80%, #7569e818, transparent 20rem),
+      linear-gradient(135deg, #083665 0%, #051d38 100%);
+    color: #ffffff;
+  }
+
+  .isco-gradient-light {
+    background:
+      radial-gradient(circle at 80% 30%, #13b6e812, transparent 30rem),
+      linear-gradient(180deg, var(--muted) 0%, var(--background) 100%);
+  }
+
+  .isco-gradient-gold {
+    background:
+      radial-gradient(circle at 20% 50%, #f2b43c18, transparent 20rem),
+      linear-gradient(135deg, var(--gold-soft) 0%, var(--background) 100%);
+  }
+
+  /* ── Gradientes por Área (§31 — uso puntual) ───────────────── */
+  .gradient-continua {
+    background: linear-gradient(135deg, #20ad91, #14966f);
+    color: #ffffff;
+  }
+
+  .gradient-certificacion {
+    background: linear-gradient(135deg, #7569e8, #6358d2);
+    color: #ffffff;
+  }
+
+  .gradient-vinculacion {
+    background: linear-gradient(135deg, #b38a36, #c49a3d);
+    color: #ffffff;
+  }
+
+  /* ── Footer Stripe — franja tricolor superior (§32) ────────── */
+  .footer-stripe {
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      #075fba 0% 52%,
+      #13b6e8 52% 76%,
+      #b38a36 76% 100%
+    );
+  }
+
+  /* ── Clases auxiliares para navy y gold ─────────────────────── */
+  .bg-navy-950 {
+    background-color: #051d38 !important;
+  }
+  .bg-navy-900 {
+    background-color: #083665 !important;
+  }
+  .bg-navy-800 {
+    background-color: #102f4d !important;
+  }
+  .bg-navy-50 {
+    background-color: #f0f5f9 !important;
+  }
+  .text-navy-950 {
+    color: #051d38 !important;
+  }
+  .text-navy-900 {
+    color: #083665 !important;
+  }
+  .text-navy-800 {
+    color: #102f4d !important;
+  }
+  .text-navy-700 {
+    color: #1c3d5a !important;
+  }
+  .text-navy-600 {
+    color: #2b4c6f !important;
+  }
+  .text-gold-400 {
+    color: #e2b55a !important;
+  }
+  .text-gold-500 {
+    color: #c49a3d !important;
+  }
+  .text-gold-600 {
+    color: #b38a36 !important;
+  }
+  .text-gold-700 {
+    color: #8c6b27 !important;
+  }
+  .bg-gold-50 {
+    background-color: #fbf7ee !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   06 — UTILITIES
+   Acentos por sección, utilidades de superficie, animaciones.
+   ───────────────────────────────────────────────────────────────────── */
+
+/* ── Acentos por Sección ─────────────────────────────────────────── */
+@layer utilities {
+  .section-accent-inicio {
+    --section-accent: var(--blue);
+  }
+  .section-accent-nosotros {
+    --section-accent: var(--secondary);
+  }
+  .section-accent-prepa {
+    --section-accent: var(--cyan);
+  }
+  .section-accent-continua {
+    --section-accent: var(--green);
+  }
+  .section-accent-certificacion {
+    --section-accent: var(--violet);
+  }
+  .section-accent-vinculacion {
+    --section-accent: var(--gold);
+  }
+  .section-accent-conocimiento {
+    --section-accent: var(--violet);
+  }
+  .section-accent-transparencia {
+    --section-accent: var(--secondary);
+  }
+  .section-accent-ecosistema {
+    --section-accent: var(--blue);
+  }
+}
+
+/* ── Superficies por Categoría — backgrounds (§13) ───────────────── */
+@layer utilities {
+  .bg-surface-prepa {
+    background-color: var(--surface-prepa);
+  }
+  .bg-surface-continua {
+    background-color: var(--surface-continua);
+  }
+  .bg-surface-certificacion {
+    background-color: var(--surface-certificacion);
+  }
+  .bg-surface-vinculacion {
+    background-color: var(--surface-vinculacion);
+  }
+  .bg-surface-transparencia {
+    background-color: var(--surface-transparencia);
+  }
+}
+
+/* ── Animaciones ─────────────────────────────────────────────────── */
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 600ms ease-out both;
+  }
+  .animate-fade-in {
+    animation: fadeIn 500ms ease-out both;
+  }
+  .animate-slide-in-left {
+    animation: slideInLeft 500ms ease-out both;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   04 — COMPONENTS — BADGES Y ESTADOS
+   Step numbers, status badges, badge-status (§26)
+   ───────────────────────────────────────────────────────────────────── */
+@layer components {
+  .step-number {
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--accent);
+    font-family: var(--font-sans);
+  }
+
+  /* Status badges existentes */
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .status-proximamente {
+    background: var(--gold-soft);
+    color: var(--gold);
+  }
+
+  .status-abierto {
+    background: var(--success-soft);
+    color: var(--success);
+  }
+
+  .status-disponible {
+    background: var(--accent);
+    color: var(--primary);
+  }
+
+  .status-cerrado {
+    background: var(--danger-soft);
+    color: var(--danger);
+  }
+
+  .status-desarrollo {
+    background: var(--violet-soft);
+    color: var(--violet);
+  }
+
+  /* ── Badge-Status — Observatorio / dataviz (§26) ───────────── */
+  .badge-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .badge-integracion {
+    background: var(--info-soft);
+    color: var(--blue);
+  }
+
+  .badge-validacion {
+    background: var(--warning-soft);
+    color: var(--warning-color);
+  }
+
+  .badge-operativo {
+    background: var(--success-soft);
+    color: var(--success-color);
+  }
+
+  .badge-suspendido {
+    background: var(--danger-soft);
+    color: var(--danger);
+  }
+
+  .badge-desarrollo {
+    background: var(--violet-soft);
+    color: var(--violet);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   08 — ACCESSIBILITY
+   Focus visible, skip link, reduced motion.
+   ───────────────────────────────────────────────────────────────────── */
+@layer base {
+  :focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 4px;
+  }
+
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 16px;
+    z-index: 9999;
+    padding: 12px 24px;
+    background: var(--secondary);
+    color: #ffffff;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .skip-link:focus {
+    top: 16px;
+  }
+}
+
+/* ── Reduced Motion (§34) ────────────────────────────────────────── */
+@layer base {
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
   }
 }

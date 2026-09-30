@@ -27,6 +27,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/certificacion-de-competencias',
+        destination: 'https://iberica.iscobusiness.edu.mx/',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

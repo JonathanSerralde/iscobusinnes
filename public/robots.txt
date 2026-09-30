@@ -2,5 +2,5 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://iberica.mx/sitemap.xml
+# Sitemap institucional ISCOBusiness
+Sitemap: https://iscobusiness.edu.mx/sitemap.xml

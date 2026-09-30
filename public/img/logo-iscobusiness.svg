@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 56" fill="none">
+  <defs>
+    <linearGradient id="isco-grad" x1="0" y1="0" x2="280" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#083665"/>
+      <stop offset="100%" stop-color="#075fba"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon: stylized "I" with gold accent -->
+  <rect x="0" y="8" width="8" height="40" rx="2" fill="#083665"/>
+  <rect x="0" y="8" width="8" height="12" rx="2" fill="#b38a36"/>
+  <!-- Wordmark -->
+  <text x="18" y="38" font-family="'Segoe UI', system-ui, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.02em" fill="url(#isco-grad)">ISCO</text>
+  <text x="108" y="38" font-family="'Segoe UI', system-ui, sans-serif" font-size="28" font-weight="400" letter-spacing="-0.02em" fill="#083665">Business</text>
+  <!-- Tagline -->
+  <text x="18" y="52" font-family="'Segoe UI', system-ui, sans-serif" font-size="8" font-weight="600" letter-spacing="0.12em" text-transform="uppercase" fill="#53657b">EDUCACIÓN · CERTIFICACIÓN · VINCULACIÓN</text>
+</svg>
